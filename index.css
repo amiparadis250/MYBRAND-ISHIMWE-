@@ -1,0 +1,134 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.Landpage{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+
+}
+.navigation{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    background-color: #020617;
+    top: 0;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    
+}
+#AboutColor{
+    color: yellow;
+}
+.navigation span{
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+.navigation-menu ul{
+    display: flex;
+    list-style-type: none;
+
+}
+.navigation-menu li{
+    margin: 14px;
+
+}
+.navigation-menu li a{
+text-decoration: none;
+color:#9CA3AF;
+font-family: Lexend Deca;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+cursor: pointer;
+
+}
+.navigation-menu li a:hover{
+    color: yellow;
+}
+.navigation-menu li a #active{
+    color: #FFFFFF;
+}
+#active{
+    color: #FFFFFF;
+}
+.landpagecontent{
+     height: 100vh;
+     width: 100%;
+     display: flex;
+     background-color:#111827;
+}
+.landpagecontainer{
+    
+    width: 80vw;
+    height: 427px;
+    margin: 120px 0 0 135px;
+    display: flex;
+}
+.introduction{
+    width: 65%;
+    margin-top: 100px;
+}
+.introduction h4{
+ color: #EAB308;
+ font-family: 'Lexend Deca';
+ font-size: 30px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 50px;
+ margin-left: 18px;
+ 
+
+}
+.introduction #myName{
+color: #F3F4F6;
+font-family: Lexend Deca;
+font-size: 42px;
+font-style: normal;
+font-weight: 700;
+line-height: 64px;
+margin-top: 10px;
+margin-left: 20px;
+
+}
+.introduction p{
+color: #6B7280;
+font-family: Lexend Deca;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: 27px; 
+margin-left: 19px;
+}
+.introduction button{
+display: flex;
+padding: 10px 30px;
+align-items: flex-start;
+margin-top: 35px;
+border-radius: 4px;
+background: #FACC15;
+margin-left: 20px;
+border: 1px solid yellow;
+}
+.introduction button a{
+    text-decoration: none;
+    color: black;
+}
+.Myphoto{
+width: 35%;
+margin-left: 80px;
+height: 100%;
+background-image: url(images/ami_paradis_1705007003010-removebg-preview.png);
+background-size: contain;
+background-repeat: no-repeat;
+margin-right: calc(33px - 100px);
+ }
