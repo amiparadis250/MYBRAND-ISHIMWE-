@@ -1,9 +1,12 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
 }
-.Landpage{
+
+/* Landingpage */
+.Landpage {
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -11,7 +14,8 @@
     background-color: aqua;
 
 }
-.navigation{
+
+.navigation {
     height: 50px;
     width: 100%;
     display: flex;
@@ -21,114 +25,215 @@
     top: 0;
     justify-content: space-evenly;
     align-items: center;
-   
-    
+
+
 }
-#AboutColor{
+
+#AboutColor {
     color: yellow;
 }
-.navigation span{
+
+.navigation span {
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
 }
-.navigation-menu ul{
+
+.navigation-menu ul {
     display: flex;
     list-style-type: none;
 
 }
-.navigation-menu li{
+
+.navigation-menu li {
     margin: 14px;
 
 }
-.navigation-menu li a{
-text-decoration: none;
-color:#9CA3AF;
-font-family: Lexend Deca;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-cursor: pointer;
+
+.navigation-menu li a {
+    text-decoration: none;
+    color: #9CA3AF;
+    font-family: Lexend Deca;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
 
 }
-.navigation-menu li a:hover{
+
+.navigation-menu li a:hover {
     color: yellow;
 }
-.navigation-menu li a #active{
+
+.navigation-menu li a #active {
     color: #FFFFFF;
 }
-#active{
+
+#active {
     color: #FFFFFF;
 }
-.landpagecontent{
-     height: 100vh;
-     width: 100%;
-     display: flex;
-     background-color:#111827;
+
+.landpagecontent {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background-color: #111827;
 }
-.landpagecontainer{
-    
+
+.landpagecontainer {
+
     width: 80vw;
     height: 427px;
     margin: 120px 0 0 135px;
     display: flex;
 }
-.introduction{
+
+.introduction {
     width: 65%;
     margin-top: 100px;
 }
-.introduction h4{
- color: #EAB308;
- font-family: 'Lexend Deca';
- font-size: 30px;
- font-style: normal;
- font-weight: 400;
- line-height: 50px;
- margin-left: 18px;
- 
+
+.introduction h4 {
+    color: #EAB308;
+    font-family: 'Lexend Deca';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    margin-left: 18px;
+
 
 }
-.introduction #myName{
-color: #F3F4F6;
-font-family: Lexend Deca;
-font-size: 42px;
-font-style: normal;
-font-weight: 700;
-line-height: 64px;
-margin-top: 10px;
-margin-left: 20px;
+
+.introduction #myName {
+    color: #F3F4F6;
+    font-family: Lexend Deca;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    margin-top: 10px;
+    margin-left: 20px;
 
 }
-.introduction p{
-color: #6B7280;
-font-family: Lexend Deca;
-font-size: 30px;
-font-style: normal;
-font-weight: 400;
-line-height: 27px; 
-margin-left: 19px;
+
+.introduction p {
+    color: #6B7280;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin-left: 19px;
 }
-.introduction button{
-display: flex;
-padding: 10px 30px;
-align-items: flex-start;
-margin-top: 35px;
-border-radius: 4px;
-background: #FACC15;
-margin-left: 20px;
-border: 1px solid yellow;
+
+.introduction button {
+    display: flex;
+    padding: 10px 30px;
+    align-items: flex-start;
+    margin-top: 35px;
+    border-radius: 4px;
+    background: #FACC15;
+    margin-left: 20px;
+    border: 1px solid yellow;
 }
-.introduction button a{
+
+.introduction button a {
     text-decoration: none;
     color: black;
 }
-.Myphoto{
-width: 35%;
-margin-left: 80px;
-height: 100%;
-background-image: url(images/ami_paradis_1705007003010-removebg-preview.png);
-background-size: contain;
-background-repeat: no-repeat;
-margin-right: calc(33px - 100px);
- }
+
+.Myphoto {
+    width: 35%;
+    margin-left: 80px;
+    height: 100%;
+    background-image: url(images/ami_paradis_1705007003010-removebg-preview.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: calc(33px - 100px);
+}
+
+/* About me page */
+.aboutme {
+    height: 100vh;
+    width: 100vw;
+    background-color: #020617;
+    display: flex;
+}
+
+.aboutmecontainer {
+    width: 80vw;
+    height: 427px;
+    margin: 120px 0 0 135px;
+    display: flex;
+
+
+}
+
+.imageSection {
+    margin-left: 60px;
+    margin-top: 40px;
+    width: 300px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    border: 16px solid #EAB308;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imageSection img {
+    width: 300px;
+    height: 340px;
+    position: relative;
+    top: -27px;
+    opacity: 1;
+}
+
+.Aboutmesection {
+    margin-left: 50px;
+    padding: 50px;
+    height: 100%;
+    width: calc(80vw - 300px);
+
+}
+
+.Aboutmesection h5 {
+    color: #F3F4F6;
+
+    font-family: Lexend Deca;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+}
+
+.Aboutmesection h5 span {
+    color: #EAB308;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+}
+
+.Aboutmesection p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    color: #6B7280;
+}
+
+.Aboutmesection button {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background-color: #EAB308;
+    border: 1px solid yellow;
+    border-radius: 4px;
+
+
+}
