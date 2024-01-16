@@ -192,6 +192,7 @@
 }
 
 .Aboutmesection {
+    margin-top: -18px;
     margin-left: 50px;
     padding: 50px;
     height: 100%;
@@ -235,5 +236,86 @@
     border: 1px solid yellow;
     border-radius: 4px;
 
+    /* SKILLS SECTION */
 
+}
+
+.skills_Section {
+    margin-top: -60px;
+    height: 95vh;
+    width: 100vw;
+    background-color: #020617;
+}
+
+.skills_Section .skillscontainer {
+    position: relative;
+    top: 60px;
+    width: 80%;
+    height: 427px;
+    margin-left: 100px;
+
+}
+
+.skillscontainer h3 {
+
+    color: white;
+    position: relative;
+    top: 35px;
+    font-family: Lexend Deca;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 64px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.Skillsitem {
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+.Skillsitem .words {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.Skillsitem .words .percent {
+    margin-right: 225px;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+
+
+}
+
+.Skillsitem .words .language {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300
+}
+
+.skillscontainer .progressbar {
+    width: 300px;
+    height: 8px;
+    flex-shrink: 0;
+    background-color: white;
+
+}
+
+.skillscontainer .progressbar .insideprpogress {
+    width: 100px;
+    height:8px;
+    background-color: yellow;
+}
+
+.Skillsitem_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
 }
