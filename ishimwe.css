@@ -5,65 +5,79 @@
 
 }
 
-/* Landingpage */
-.Landpage {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    background-color: aqua;
+html,
+body {
+    scroll-behavior: smooth;
 
 }
 
-.navigation {
-    height: 50px;
+
+
+.Container {
     width: 100%;
+}
+
+/* Navigation */
+.Container .navigation {
     display: flex;
+    width: 100%;
+    background-color: #1F2937;
+    height: 10%;
     position: fixed;
     overflow: hidden;
-    background-color: #020617;
-    top: 0;
-    justify-content: space-evenly;
-    align-items: center;
-
-
+    top: 0px;
+    z-index: 5;
 }
 
-#AboutColor {
-    color: yellow;
-}
-
-.navigation span {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: white;
+.navigation-menu {
+    display: flex;
+    flex: 1;
 }
 
 .navigation-menu ul {
     display: flex;
-    list-style-type: none;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation-menu li {
-    margin: 14px;
-
+    display: flex;
+    margin: 20px;
 }
 
 .navigation-menu li a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     text-decoration: none;
     color: #9CA3AF;
-    font-family: Lexend Deca;
-    font-size: 12px;
+    font-family: "Lexend Deca";
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    text-transform: uppercase;
     cursor: pointer;
+}
 
+.logo {
+    margin-left: 50px;
+    margin-top: 17px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    width: 30%;
+}
+
+.logo span {
+    color: #EAB308;
 }
 
 .navigation-menu li a:hover {
-    color: yellow;
+    color: #EAB308;
 }
 
 .navigation-menu li a #active {
@@ -74,24 +88,33 @@
     color: #FFFFFF;
 }
 
-.landpagecontent {
-    height: 100vh;
+/* navigations ended here */
+/* Landingpage */
+.Container>.landpagecontainer {
+    background-color: #020617;
     width: 100%;
+    height: 100vh;
     display: flex;
-    background-color: #111827;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-.landpagecontainer {
-
-    width: 80vw;
-    height: 427px;
-    margin: 120px 0 0 135px;
-    display: flex;
-}
-
-.introduction1 {
-    width: 65%;
+.landpagecontainer>.introduction1 {
+    width: 60%;
+    height: 80%;
+    padding: 100px;
     margin-top: 100px;
+}
+
+.landpagecontainer>.Myphoto {
+    flex: 1;
+    height: 80%;
+}
+
+.Myphoto img {
+    margin-top: 110px;
+    width: 80%;
+    height: 80%;
 }
 
 .introduction1 h4 {
@@ -126,6 +149,7 @@
     font-weight: 400;
     line-height: 27px;
     margin-left: 19px;
+    width: 700px;
 }
 
 .introduction1 button {
@@ -144,29 +168,24 @@
     color: black;
 }
 
-.Myphoto {
-    width: 35%;
-    margin-left: 80px;
-    height: 100%;
-    background-image: url(images/ami_paradis_1705007003010-removebg-preview.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    margin-right: calc(33px - 100px);
-}
+
+
 
 /* About me page */
 .aboutme {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: #020617;
     display: flex;
 }
 
 .aboutmecontainer {
-    width: 80vw;
+    background-color: #020617;
+    width: 80%;
     height: 427px;
     margin: 120px 0 0 135px;
     display: flex;
+    flex-wrap: wrap;
 
 
 }
@@ -174,7 +193,7 @@
 .imageSection {
     margin-left: 60px;
     margin-top: 40px;
-    width: 300px;
+    width: 30%;
     height: 350px;
     flex-shrink: 0;
     border-radius: 24px;
@@ -196,7 +215,7 @@
     margin-left: 50px;
     padding: 50px;
     height: 100%;
-    width: calc(80vw - 300px);
+    flex: 1;
 
 }
 
@@ -253,6 +272,8 @@
     width: 80%;
     height: 427px;
     margin-left: 100px;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -261,6 +282,7 @@
     color: white;
     position: relative;
     top: 70px;
+    left: 420px;
     font-family: Lexend Deca;
     font-size: 25px;
     font-style: normal;
@@ -324,16 +346,16 @@
 /* Start Of MY Portfolio Section */
 .Myportfolio {
     height: 110vh;
-    width: 100vw;
+    width: 100%;
     background-color: #020617;
     display: flex;
 }
 
 .portfolioContainer {
     margin-top: 100px;
-    width: 80%;
+    width: 90%;
     height: 530px;
-    margin-left: 130px;
+    margin-left: 80px;
 }
 
 .Myportfolio .title {
@@ -344,6 +366,7 @@
     font-size: 30px;
     font-style: normal;
     font-weight: 500;
+    margin-left: -50px;
 }
 
 .Myportfolio .title span {
@@ -373,81 +396,60 @@
     margin-bottom: 35px;
 }
 
-.portfolioContainer .project {
-    display: flex;
-    height: 350px;
-    flex-direction: row;
 
+.project {
+    margin-top: -20px;
+    display: flex;
+    width: 100%;
+    height: 65%;
+    background-color: #020617;
 }
 
-.project .leftProject {
-    position: relative;
-    left: -35px;
-    width: 26%;
-    height: 86%;
-    margin-left: 280px;
-    background-image: url(images/p-image2.png);
+.project .project1 {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.project1 .image {
+    width: 100%;
+    height: 70%;
     background-size: cover;
     background-repeat: no-repeat;
+    opacity: 0.1px;
+}
 
+.project1 .description {
+    margin-left: 8px;
+    background-color: whitesmoke;
+}
+
+.project1 .description .name {
+    color: black;
+
+    font-family: "Lexend Deca";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.project1 .description p {
+    color: black;
+    font-family: Lexend Deca;
+    font-style: normal;
 
 }
 
-.rightProject {
-    position: relative;
-    left: -35px;
-    width: 30%;
-    height: 90%;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.description button {
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    width: 23%;
+    background-color: #EAB308;
+    padding: 1px;
 
-}
-
-.rightProject .project1 {
-
-    background-color: #FFF;
-    width: 139px;
-    height: 140px;
-    border-radius: 12px;
-    margin-left: 5px;
-    margin-top: 5px;
-    background-image: url(images/p-img2.png);
-    background-size: cover;
-
-}
-
-.rightProject .project2 {
-    background-color: bisque;
-    width: 139px;
-    height: 140px;
-    margin-bottom: 2px;
-    margin-left: 20px;
-    border-radius: 12px;
-    margin-top: 5px;
-    background-image: url(images/p-img1.png);
-    background-size: cover;
-
-
-}
-
-.rightProject .project3 {
-    background-image: url(images/p-img3.png);
-    width: 139px;
-    height: 140px;
-    border-radius: 12px;
-    margin-left: 5px;
-    background-size: cover;
-}
-
-.rightProject .project4 {
-    background-image: url(images/p-img4.png);
-    width: 139px;
-    height: 140px;
-    margin-left: 20px;
-    border-radius: 12px;
-    background-size: contain;
 }
 
 /* END OF MY PORTFOLIO */
@@ -495,7 +497,6 @@
     width: 180px;
     height: 200px;
     flex-shrink: 0;
-    background-color: aqua;
 }
 
 .bloginfo {
@@ -528,7 +529,6 @@
 
 .bloginfo #t {
     color: var(--Yellow, #FFB400);
-    font-family: ;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -538,6 +538,8 @@
 
 .bloglist {
     display: flex;
+    margin-left: 60px;
+    flex-wrap: wrap;
 }
 
 .Eachblog_container {
@@ -548,7 +550,7 @@
 }
 
 #t {
-    margin-top: 20pxpx;
+    margin-top: 20px;
 }
 
 /* Starting of Contact Page */
@@ -560,7 +562,7 @@
 
 .contactHeader .title1 {
     position: relative;
-    top: 100px;
+    top: 110px;
     color: #F3F4F6;
     text-align: center;
     font-family: Lexend Deca;
@@ -575,7 +577,7 @@
 }
 
 .contactHeader p {
-    margin-top: 100px;
+    margin-top: 110px;
     color: #9CA3AF;
     text-align: center;
     font-family: Lexend Deca;
@@ -593,7 +595,7 @@
 }
 
 .contactcontainer .adress {
-    margin-top: 40px;
+    margin-top: 50;
     width: 50%;
     height: 100%;
     padding: 60px;
@@ -621,9 +623,9 @@
 }
 
 .contactcontainer .contact {
-    margin-top: 30px;
+    margin-top: -20px;
     padding: 20px;
-    width: 50%;
+    flex: 1;
     height: 100%;
 }
 
@@ -632,8 +634,10 @@
     height: 50px;
     background: #1F2937;
     margin-bottom: 10px;
+    position: relative;
+    left: -9px;
     outline: 0px;
-    border: 1px solid  #1F2937;
+    border: 1px solid #1F2937;
 }
 
 .contactcontainer .contact textarea {
@@ -642,7 +646,8 @@
     background-color: #1F2937;
     outline: none;
 }
-.contactcontainer .contact button{
+
+.contactcontainer .contact button {
     margin-top: 5px;
     display: flex;
     padding: 16px 20px;
@@ -651,20 +656,121 @@
     border-radius: 4px;
     background: #EAB308;
     outline: none;
-    border: 1px solid  #EAB308;
-} 
+    border: 1px solid #EAB308;
+}
+
 /* Ending of Contact me */
 /* Starting of Login and Signup */
-.register{
+.Register {
+    height: 100%;
     width: 100%;
-    height: 80%;
     background-color: #020617;
     display: flex;
 }
-.login_part{
-    width: 50%;
+
+.Form_Container {
+    margin-top: 40px;
     height: 80%;
-    background-color: green;
-    margin-left:300px;
+    width: 50%;
+
+}
+
+.header {
     display: flex;
+    height: 40px;
+    width: 100%
+}
+
+.header .right {
+    background-color: white;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+}
+
+.header .left {
+    width: 50%;
+    height: 40px;
+    background-color: #EAB308;
+    text-align: center;
+    padding: 10px;
+}
+
+.conected {
+    margin-top: 150px;
+    width: 40%;
+    height: 60%;
+    margin-left: 100px;
+    flex: 1;
+    height: 86px;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    /* 100% */
+    text-transform: capitalize;
+}
+
+.form {
+    position: relative;
+    width: 55%;
+    height: 70%;
+    margin: 50px;
+    margin-top: 40px;
+    margin-left: 140px;
+    border: 1px solid yellow;
+    left: -130px;
+
+}
+
+form input {
+    width: 280px;
+    height: 30px;
+    border: 1px solid #EAB308;
+    background: #020617;
+    outline: none;
+    margin: 10px;
+    color: white;
+    padding: 5px;
+
+
+}
+
+.form span {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    margin-left: 7px;
+}
+
+.form button {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 280px;
+    height: 30px;
+    background-color: #EAB308;
+    margin-left: 6px;
+    margin-top: 1px;
+    outline: none;
+    border: 1px solid #EAB308;
+}
+
+form {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+
+.form {
+    width: 55%;
+    margin-left: 10%;
 }
