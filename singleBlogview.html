@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single blog view</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="single.css">
+        
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="logo">About<span>Me</span></div>
+            <div class="navlinks">
+                <a href="#">Programming</a>
+                <a href="#">Ecommerce</a>
+                <a href="#">Data analytics</a>
+                <a href="#">Trends</a>
+                <a href="#">Home</a>
+            </div>
+           <div class="menuicon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="news">
+            <div class="newstitle">
+                <p>The majesty of code that lies on one compiler</p>
+                <p>by Ami Paradis</p>
+                <span style="color:blue;">22/01/2024 18:23</span>
+            </div>
+            <div class="newsbody">
+                <img src="images/coding-7-1920 1.jpg" alt="" width="90%">
+                <p>Code, the unsung artistry behind technology, reveals itself as a silent symphony—a dance of syntax, 
+                    logic, and precision that shapes our digital world. With each line akin to a brushstroke, code becomes 
+                    a canvas where programmers craft intricate masterpieces. Its elegance transcends mere instructions;
+                    it is an architectural ballet, orchestrating structures, modules, and functions in a harmonious dance.
+                    Version control, a time machine, preserves the evolutionary narrative of the codebase, showcasing the
+                    collaborative brilliance of developers over time.</p>
+                <p>In the canvas of debugging, developers unravel mysteries, 
+                    turning imperfections into opportunities for refinement. Code reviews become a ballet of collaboration,
+                    where feedback and refinement refine the silent masterpiece. Beyond its utilitarian role, code stands as
+                    a testament to human creativity and innovation—a living art form shaping the digital landscape.</p>
+                <p>In the canvas of debugging, developers unravel mysteries, 
+                    turning imperfections into opportunities for refinement. Code reviews become a ballet of collaboration,
+                    where feedback and refinement refine the silent masterpiece. Beyond its utilitarian role, code stands as
+                    a testament to human creativity and innovation—a living art form shaping the digital landscape.
+                    In the canvas of debugging, developers unravel mysteries, turning imperfections into opportunities
+                    for refinement. Code reviews become a ballet of collaboration, where feedback and refinement refine the
+                    silent masterpiece. Beyond its utilitarian role, code stands as a testament to human creativity 
+                    and innovation—a living art form shaping the digital landscape.</p>
+                    <div class="feedback">
+                        <p>Is this article helpful 
+                            <i class="fa-solid fa-thumbs-up"><sup style="color:white;font-size: 17px;">2</sup></i>
+                            <i id="unlike" class="fa-solid fa-thumbs-down"><sup style="color: white;font-size: 17px;">1</sup></i>
+                            <i id="unlike2" class="fa-solid fa-comment"><sup style="color: white;font-size: 17px;">6</sup></i>
+                        </p>
+                    </div>
+            <div class="contact" id="contact">
+                <p style="padding-bottom: 10px;font-size: 20px;">Leave Message or Comment?</p>
+                <form>
+                    <p><input id="name" type="text" placeholder="Name"><br></p>
+                    <p><textarea id="comment" rows="10" cols="50" placeholder="Enter your message"></textarea><br></p>
+                    <button type="text">Send</button>
+                </form>
+            </div>
+            <script>
+                function toggleMenu() {
+                    const navlinks = document.querySelector('.navlinks');
+                    navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
+                }
+            </script>
+</body>
+</html>

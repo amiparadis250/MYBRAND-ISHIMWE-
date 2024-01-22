@@ -1,0 +1,251 @@
+/* Add the imported fonts */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&family=Poppins:wght@300&display=swap');
+
+/* Reset and Box Sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #020617;
+    font-family: "Lexend Deca", sans-serif;
+    color: #FFF;
+}
+
+/* Container Styles */
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigation Styles */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #020617;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation {
+    background-color: #1F2937;
+    display: flex;
+    height: 8%;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 12px;
+    position: fixed;
+    overflow: hidden;
+    top: 0px;
+    z-index: 5;
+
+}
+
+.feedback {
+    margin-left: 20px;
+}
+
+.logo {
+    color: #FFF;
+    font-family: "Lexend Deca";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.navlinks {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 60px;
+}
+
+.navlinks a {
+    color: #FFF;
+    font-family: "Lexend Deca";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #EAB308;
+}
+
+.navlinks a:first-child {
+    color: #1B7BE2;
+    ;
+}
+
+/* News Section Styles */
+.newstitle {
+    margin-top: 70px;
+    margin-left: 20px;
+}
+
+.news {
+    padding: 60px 30px;
+}
+
+.newsbody img {
+    margin-top: 15px;
+    padding-left: 27px;
+    height: auto;
+    max-width: 80%;
+}
+
+.newstitle p:first-child {
+    font-size: 40px;
+}
+
+.newstitle p {
+    font-size: 24px;
+}
+
+.newsbody p {
+    font-size: 18px;
+    margin: 20px 0;
+    padding-right: 15px;
+    color:#6B7280;
+}
+
+/* Feedback Section Styles */
+.feedback {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.feedback i {
+    font-size: 40px;
+    color: #EAB308;
+    cursor: pointer;
+    margin: 8px;
+}
+/* 
+#unlike2 {
+    margin-left: -100px;
+} */
+
+/* Comment Form Styles */
+.comment-form {
+    margin-bottom: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.comment-form button {
+    padding: 10px;
+    background-color: #EAB308;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+}
+
+/* Contact Section Styles */
+.contact {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+/* Media Query for Small Screens */
+@media only screen and (max-width: 768px) {
+    .navlinks {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1F2937;
+        text-align: center;
+        /* display: none; */
+    }
+
+    .navlinks.show {
+        display: flex;
+    }
+
+    .navlinks a {
+        padding: 15px;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .menu-btn.show {
+        display: none;
+    }
+
+    .feedback {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #unlike2 {
+        margin-left: 0;
+    }
+
+    .contact {
+        padding-left: 0;
+    }
+    .feedback i {
+        font-size: 30px;
+        color: #EAB308;
+        cursor: pointer;
+        margin: 8px;
+    }
+    .newstitle p:first-child{
+        font-size: 24px;
+
+    }
+}
+@media only screen and (max-width: 300px){
+    .feedback i{
+        font-size: 16px;
+    }
+
+}
+@media only screen and (max-width: 400px){
+    .feedback i{
+        font-size: 26pxpx;
+    }
+    .newstitle{
+
+    }
+
+}
