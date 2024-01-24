@@ -1,3 +1,4 @@
+
 *{
     padding: 0px;
     margin:0px;
@@ -21,7 +22,7 @@ font-style: normal;
 font-weight: 700;
 line-height: normal;
 margin-top: 14px;
-margin-left: 80px;
+margin-left: 40px;
 }
 .logo span{
 color: #EAB308;
@@ -40,7 +41,6 @@ line-height: normal;
  .header{
     height: 10%;
     width: 100%;
-    background-color: black;
     display: flex;
     justify-content: space-between;
     color: white;
@@ -50,19 +50,175 @@ line-height: normal;
     top: -4px;
 }
 .mainContents{
+    margin-left: 40px;
     width: 100%;
     height: 90%;
-    background-color:blue ;
-    display: flex;
+    /* background-color:blue ; */
 }
 .mainContents .Sidebar{
-    width: 15%;
-    height: 100%;
-    background-color: aqua;
+    width: 10%;
+    height: 98%;
+   background-color: #f5f5f5;
 }
 .sections{
     margin-left: 20px;
 }
-.sections img{
-    width: 80px;
+.mainContents {
+    display: flex;
+    color:  #1a1a1a;
+    border-radius: 8px;
+    font-weight: bold;
+    
 }
+.Sidebar i:first-child{
+    margin-top: 5px;
+}
+
+.Sidebar i {
+    font-size: 70px;
+    margin-left: -10px;
+}
+
+.Sidebar p {
+    margin: 8px 0 0 0;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: -10px;
+}
+#blogs,
+#users{
+    margin-left: -9px;
+}
+#blogs{
+    margin-left: -10px;
+}
+
+.sections:hover {
+    transform: scale(1.05);
+}
+.rightside{
+    /* background-color: brown; */
+    width: 87%;
+    padding-top: 18px;
+    padding-left: 60px;
+
+    
+}
+.rightside .usersblog{
+display: flex;
+margin-top: -30px;
+}
+.usersblog .editusers{
+   
+margin: 13px;
+width: 180px;
+height: 50px;
+background-color: #f5f5f5;
+
+}
+#we{
+    position: relative;
+    bottom: 20px;
+    font-size: 20px;
+}
+.create h2{
+color: #FFF;
+font-family: "Lexend Deca";
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+padding-left: 200px;
+}
+.create h4{
+color: #FFF;
+font-family: "Lexend Deca";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.create input{
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+/* rich text editor */
+/* CSS code for rich text editor */
+
+/* Rich text editor container */
+
+  .rich-text-editor {
+    margin-top: 10px;
+    width: 80%;
+    height: 270px;
+    border: 2px solid white;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    color: #6B7280;
+  }
+  
+  /* Toolbar section */
+  .toolbar {
+    width: 100%;
+    height: 15%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow-x: auto;
+
+  }
+  
+  /* Toolbar buttons */
+  .option-button,
+  .adv-option-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color:#1a1a1a; ;
+    color: yellow;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+  #add{
+    margin-top: -3px;
+  }
+  
+  .option-button:hover,
+  .adv-option-button:hover {
+    background-color: white;
+    color: #EAB308;
+  }
+  
+  /* Content section */
+  .content {
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-y: auto;
+  }
+  .create #saveblog{
+     position: relative;
+    outline: none;
+    border:none;
+    width: 80%;
+    padding: 20px;
+    background-color: yellow; 
+    top: 14px;
+    font-size: 20px;
+    font-weight: bold;
+   
+  }
+  #saveblog span{
+    position: relative;
+    bottom: 10px;
+  }
+
+
