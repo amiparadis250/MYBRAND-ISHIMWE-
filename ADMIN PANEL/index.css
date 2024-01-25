@@ -65,7 +65,7 @@ line-height: normal;
 }
 .Sidebar {
     width: 15%;
-    height: 90vh;
+    height: 85vh;
     background-color: #f1f1f1; /* Changed the background color */
     display: flex;
     flex-direction: column;
