@@ -841,6 +841,44 @@ form {
     width: 55%;
     margin-left: 10%;
 }
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo {
+    margin-right: 20px;
+    /* Add any additional styles for your logo */
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+}
 
 .contactcontainer {
     width: 90%;
