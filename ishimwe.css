@@ -896,6 +896,9 @@ form {
         
         
     }
+    .menuicon{
+display: block;
+    }
 
     .menuicon {
         display: block;
@@ -1086,7 +1089,11 @@ form {
         position: static;
     }
 }
-
+@media only screen and (max-width: 800px){
+    .menuicon{
+        display: block;
+    }
+}
 
 
 /* Tablet adjustments */

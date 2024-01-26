@@ -21,7 +21,7 @@
                 <a href="#">Trends</a>
                 <a href="#">Home</a>
             </div>
-           <div class="menuicon"><i class="fa-solid fa-bars"></i></div>
+           <div class="menuicon" style="display: none;"><i class="fa-solid fa-bars"></i></div>
         </div>
         <div class="news">
             <div class="newstitle">
@@ -61,7 +61,7 @@
                 <form>
                     <p><input id="name" type="text" placeholder="Name"><br></p>
                     <p><textarea id="comment" rows="10" cols="50" placeholder="Enter your message"></textarea><br></p>
-                    <button type="text">Send</button>
+                    <button type="text" style="background-color: yellow;">Send</button>
                 </form>
             </div>
             <script>
@@ -70,5 +70,28 @@
                     navlinks.style.display = navlinks.style.display === 'flex' ? 'none' : 'flex';
                 }
             </script>
+            <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var form = document.querySelector("form");
+        var nameInput = document.getElementById("name");
+        var commentInput = document.getElementById("comment");
+        var displayArea = document.getElementById("display-reply");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get the values from the form inputs
+            var name = nameInput.value;
+            var comment = commentInput.value;
+
+            // Display the reply below the form
+            displayArea.innerHTML = "<strong>Your Message:</strong><br>Name: " + name + "<br>Comment: " + comment;
+
+            // Clear the form inputs
+            nameInput.value = "";
+            commentInput.value = "";
+        });
+    });
+</script>
 </body>
 </html>
