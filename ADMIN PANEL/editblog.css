@@ -17,7 +17,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 3px;
-    margin-left: -20px;
+    margin-left: -30px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -43,9 +43,9 @@ tr:nth-child(odd) {
 }
 
 
-tr:hover {
+/* tr:hover {
     background-color: #b3d9ff;
-}
+} */
 
 button {
     padding: 8px 12px;
@@ -64,5 +64,8 @@ button:hover {
 .pagination {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    justify-content: flex-end;
+    margin-top: 10px;
+    left: -27px;
+    position: relative;
 }
