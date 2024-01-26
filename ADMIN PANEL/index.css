@@ -15,6 +15,9 @@ body,html{
     width: 100%;
     background-color: #020617;
 }
+a{
+    text-decoration: none;
+}
 .logo{
 color: white;
 font-family: "Lexend Deca";
@@ -91,6 +94,9 @@ line-height: normal;
     vertical-align: middle; 
     font-size: 30px;/* Added this property to align the icons */
 }
+.sections i:hover{
+    color: blue; 
+}
 
 .sections {
     /* margin: 5px; */
@@ -101,14 +107,12 @@ line-height: normal;
     color: black; /* Changed the text color */
     display: inline-block; /* Added this property to make the text start on the same line */
 }
-
-/* .sections:hover {
-    background-color: #555;
-    cursor: pointer;
-    margin-bottom: 15px;
-} */
-
-
+.sections span:hover{
+    color: blue;
+}
+.sections:hover{
+    color: blue;
+}
 .rightside{
     /* background-color: brown; */
     width: 87%;
