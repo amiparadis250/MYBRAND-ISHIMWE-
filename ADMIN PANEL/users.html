@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome/Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="index.css">
+ <link rel="stylesheet" href="editblog.css">
+ <style>
+    
+ </style>
+
+</head>
+<body>
+<div class="adminpanel">
+    <div class="header">
+        <div class="logo">About<span>Me</span></div>
+        <div class="user">
+            <span>Welcome back Ami Paradis</span>
+            <img src="Assets/User.svg" alt="" >
+        </div>
+    </div>
+    <div class="mainContents">
+      <div class="Sidebar">
+        <div class="sections">
+          <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
+        </div>
+        <div class="sections">
+            <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
+            </p>
+        </div>
+        <div class="sections">
+            <p> <i  style="position: relative;left: -20px;" class="fa-solid fa-envelope"></i><span id="message">Messages</span></p>
+        </div>
+        <div class="sections">
+            <p><i class="fa-solid fa-bell"  style="position: relative;left: -5px;font-size: 40px;"></i><span id="notification">Notifications</span></p>
+        </div>
+        <div class="sections">
+            <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
+        </div>
+        <div class="sections">
+            <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
+        </div>
+    </div>
+    
+    <div class="rightside">
+        <div class="usersblog">
+            <div class="editusers">
+                <svg id="add"   xmlns="http://www.w3.org/2000/svg" width="60" height="57" viewBox="0 0 97 84" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M48.4146 76.8375C70.4977 76.8375 88.3999 61.3549 88.3999 42.2564C88.3999 23.1578 70.4977 7.67533 48.4146 7.67533C26.3314 7.67533 8.42937 23.1578 8.42937 42.2564C8.42937 61.3549 26.3314 76.8375 48.4146 76.8375ZM51.4135 31.8821C51.4135 30.4497 50.0708 29.2885 48.4146 29.2885C46.7584 29.2885 45.4157 30.4497 45.4157 31.8821V39.6628H36.4191C34.7628 39.6628 33.4202 40.8241 33.4202 42.2564C33.4202 43.6888 34.7628 44.85 36.4191 44.85H45.4157V52.6308C45.4157 54.0631 46.7584 55.2243 48.4146 55.2243C50.0708 55.2243 51.4135 54.0631 51.4135 52.6308V44.85H60.4102C62.0664 44.85 63.4091 43.6888 63.4091 42.2564C63.4091 40.8241 62.0664 39.6628 60.4102 39.6628H51.4135V31.8821Z" fill="#1C274C"/>
+                  </svg> <span id="we">Add users</span>
+            </div>
+
+           
+        </div>
+        <div class="editblog">
+            <div class="editTitle"><h3>Manage Users</h3></div>
+            <div class="table">
+                <table>
+                    <tr><th>Number</th>
+                        <th>Names</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>MUCYO Alistde</td>
+                        <td>alistde@gmail.com</td>
+                        <td>Author</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                <tr>
+                        <td>2</td>
+                        <td>MUCYO Alistde RWEMA</td>
+                        <td>alistde@gmail.com</td>
+                        <td>Author</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>MUCYO Alistde</td>
+                        <td>alistde@gmail.com</td>
+                        <td>Author</td>
+                        <td><button>Edit</button><button>Delete</button></td>
+                    </tr>
+                    
+                    
+                    
+                    
+                </table>
+            </div>
+            <div class="pagination">
+                <button onclick="prevPage()" style="width: 100px;">Previous</button>
+                <span id="currentPage" style="color: white; ">Page 1</span>
+                <button onclick="nextPage()" style="width: 100px;">Next</button>
+            </div>
+        </div>
+        
+    </div>
+</div>
+</div>
+    
+</body>
+</html>
