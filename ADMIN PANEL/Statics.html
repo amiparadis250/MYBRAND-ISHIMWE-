@@ -71,7 +71,24 @@
                 </div>
             </div>
          <div class="chart">
-            <canvas id="visitorsPerDayChart" style="max-height: 100px;"></canvas>
+            <canvas id="visitorsPerDayChart" style="max-height: 20vh;"></canvas>
+         </div>
+         <div class="bottom">
+            <div class="trends">
+                <h3>Most Viewed Website</h3>
+                <div class="news">
+                <p>1. Write Run  every Where, Fill Java Reality</p>
+                <p>2. Majesty Of code that makes you legend, VS code is my tool</p>
+                <p>3. MY ATLP Journey</p>
+                <p>4. Why I decided to quit may Job at KIgali Comvention center</p>
+                </div>
+               
+            </div>
+            <div class="visitors">
+                <div class="chart">
+                    <canvas id="visitorsDevicesChart" style="max-height: 20vh; width: 50%;"></canvas>
+                </div>
+            </div>
          </div>
             </div>
         
@@ -101,6 +118,31 @@ new Chart("visitorsPerDayChart", {
         maintainAspectRatio: false
     }
 });
+new Chart("visitorsDevicesChart", {
+            type: "bar",
+            data: {
+                labels: ["Tablet", "Phone", "Computer"],
+                datasets: [{
+                    label: "Visitors and Devices",
+                    data: [450, 720, 1200], // Replace with your actual data
+                    backgroundColor: ["blue", "green", "orange"],
+                    borderColor: ["blue", "green", "orange"],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                legend: {
+                    display: false
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
 
    </script> 
 </body>

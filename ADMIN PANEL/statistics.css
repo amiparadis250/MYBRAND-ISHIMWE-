@@ -54,3 +54,37 @@ position: relative;
     right: 40px;
   
 }
+.bottom{
+    /* margin-top: 30px; */
+    display: flex;
+    width: 100%;
+    position: relative;
+    right: 40px;
+}
+
+.trends{
+    width:48%;
+    border: 1px solid blue;
+    margin: 3px;
+    padding-left: 10px;
+    height: 25vh;
+}
+.visitors{
+    width: 48%;
+    border: 1px solid blue;
+    margin: 3px;
+    height: 25vh;
+}
+.trends h3{
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;  
+ 
+}
+.trends .news{
+    margin-top: 10px;
+}
+.trends p{
+    color: #6B7280; 
+    margin: 2px;
+}
