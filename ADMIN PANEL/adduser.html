@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome/Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="index.css">
+ <link rel="stylesheet" href="editblog.css">
+ <style>
+    newusers form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newusers p {
+            margin-bottom: 15px;
+            color: #FFF;
+            font-size: 20px;
+        }
+
+        .newusers input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 2px solid #1E81EA;
+            border-radius: 4px;
+            background-color: #ffffff;
+            color: #343a40;
+        }
+
+        .newusers button {
+            width: 80%;
+            padding: 10px;
+           background-color:  #D4A81E;
+            color: #ffffff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .newusers button:hover {
+            background-color:#1E81EA;
+        }
+ </style>
+
+</head>
+<body>
+<div class="adminpanel">
+    <div class="header">
+        <div class="logo">About<span>Me</span></div>
+        <div class="user">
+            <span>Welcome back Ami Paradis</span>
+            <img src="Assets/User.svg" alt="" >
+        </div>
+    </div>
+    <div class="mainContents">
+      <div class="Sidebar">
+        <div class="sections">
+          <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
+        </div>
+        <div class="sections">
+            <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
+            </p>
+        </div>
+        <div class="sections">
+            <p> <i  style="position: relative;left: -20px;" class="fa-solid fa-envelope"></i><span id="message">Messages</span></p>
+        </div>
+        <div class="sections">
+            <p><i class="fa-solid fa-bell"  style="position: relative;left: -5px;font-size: 40px;"></i><span id="notification">Notifications</span></p>
+        </div>
+        <div class="sections">
+            <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
+        </div>
+        <div class="sections">
+            <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
+        </div>
+    </div>
+    
+    <div class="rightside">
+       <div class="rightside">
+        <div class="usersblog">
+            <!-- <div class="editusers">
+                <svg id="add" xmlns="http://www.w3.org/2000/svg" width="60" height="57" viewBox="0 0 97 84"
+                    fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M48.4146 76.8375C70.4977 76.8375 88.3999 61.3549 88.3999 42.2564C88.3999 23.1578 70.4977 7.67533 48.4146 7.67533C26.3314 7.67533 8.42937 23.1578 8.42937 42.2564C8.42937 61.3549 26.3314 76.8375 48.4146 76.8375ZM51.4135 31.8821C51.4135 30.4497 50.0708 29.2885 48.4146 29.2885C46.7584 29.2885 45.4157 30.4497 45.4157 31.8821V39.6628H36.4191C34.7628 39.6628 33.4202 40.8241 33.4202 42.2564C33.4202 43.6888 34.7628 44.85 36.4191 44.85H45.4157V52.6308C45.4157 54.0631 46.7584 55.2243 48.4146 55.2243C50.0708 55.2243 51.4135 54.0631 51.4135 52.6308V44.85H60.4102C62.0664 44.85 63.4091 43.6888 63.4091 42.2564C63.4091 40.8241 62.0664 39.6628 60.4102 39.6628H51.4135V31.8821Z"
+                        fill="#1C274C" />
+                </svg> <span id="we">Add users</span>
+            </div> -->
+            <div class="editusers">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="50" viewBox="0 0 95 81" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M83.6051 9.74916C78.9675 5.84393 71.4491 5.8439 66.8115 9.74916L60.1623 15.3485L28.8677 41.7017C28.3604 42.129 28.0005 42.6643 27.8265 43.2503L23.8682 56.5837C23.5309 57.7197 23.9262 58.9213 24.9093 59.749C25.8925 60.577 27.3195 60.91 28.6684 60.626L44.5015 57.2927C45.1978 57.146 45.8331 56.843 46.3406 56.4157L77.4076 30.2542L84.2844 24.4632C88.922 20.558 88.922 14.2263 84.2844 10.3211L83.6051 9.74916ZM72.4094 14.4632C73.9551 13.1615 76.4615 13.1615 78.0072 14.4632L78.6865 15.0351C80.2322 16.3369 80.2322 18.4474 78.6865 19.7492L74.6629 23.1376L68.5061 17.7503L72.4094 14.4632ZM62.907 22.4652L69.0638 27.8525L41.5182 51.049L33.1485 52.811L35.2409 45.763L62.907 22.4652ZM15.8333 27.3921C15.8333 25.5512 17.6055 24.0588 19.7917 24.0588H39.5833C41.7695 24.0588 43.5417 22.5664 43.5417 20.7255C43.5417 18.8845 41.7695 17.3921 39.5833 17.3921H19.7917C13.2333 17.3921 7.91666 21.8693 7.91666 27.3921V64.0587C7.91666 69.5817 13.2333 74.0587 19.7917 74.0587H63.3333C69.8919 74.0587 75.2083 69.5817 75.2083 64.0587V47.392C75.2083 45.5513 73.4362 44.0587 71.25 44.0587C69.0638 44.0587 67.2916 45.5513 67.2916 47.392V64.0587C67.2916 65.8997 65.5195 67.392 63.3333 67.392H19.7917C17.6055 67.392 15.8333 65.8997 15.8333 64.0587V27.3921Z" fill="#1C274C"/>
+                  </svg>
+                  <span id="we">Edit User</span>
+            </div>
+        </div>
+        <div class="editblog">
+            <div class="editTitle">
+                <h3>Add Users</h3>
+            </div>
+            <div class="newusers">
+                <form action="">
+                <p>Name:<br>
+                    <input type="text"></p> 
+                        <p>Password:<br>
+                            <input type="password"></p>
+                        </p>Email:<br>
+                        <input type="email"></p> 
+                        <p>Role:<br>
+                            <input type="text"></p>
+                        <button>Add User</button>       
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+<script>
+
+</script>
+</body>
+</html>
