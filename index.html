@@ -42,6 +42,7 @@
                 <p>Do not hesitate to give me a job,<br>
                     I will design website that exceeds your expectations,</p>
                 <button><a href="button">Contact me</a></button>
+                
             </div>
             <div class="Myphoto">
                 <img src="images/ami_paradis_1705007003010-removebg-preview.png" alt="">
@@ -63,7 +64,7 @@
                         user-centric solutions.
                         Let's collaborate to shape impactful and cutting-edge digital experiences
                     </p>
-                    <button><a href="images/Paradis's CV.pdf" style="text-decoration: none;"></a>Download my Resume</button>
+                    <button><a href="images/Paradis's CV.pdf" style="text-decoration: none;">Download my Resume</a></button>
                 </div>
             </div>
         </div>
@@ -246,6 +247,11 @@
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
                                 <span id="t">Learn More </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup  style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
                             </div>
                         </div>
 
@@ -257,9 +263,12 @@
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
                                 <span id="t">Learn More </span>
-                                <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
                                 <span><i class="fa-solid fa-comment"></i></span>
-                                <i class="fa-solid fa-share"></i>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                                
                             </div>
                         </div>
                         <div class="Eachblog_container">
@@ -270,6 +279,11 @@
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
                                 <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -376,7 +390,19 @@
 
 <!-- Ending of Footer -->
         </div>
-    </script>
+        <script>
+            // Select the menu icon and the navigation menu elements
+var menuIcon = document.querySelector('.menuicon');
+var navMenu = document.querySelector('.navigation-menu');
+
+// Add a click event listener to the menu icon
+menuIcon.addEventListener('click', function() {
+  // Toggle the display of the navigation menu
+  navMenu.classList.toggle('active');
+});
+
+        </script>
+  
 
 
 </body>
