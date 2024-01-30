@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title> About me</title>
+    <meta name="description" content="This is ISHIMWE Ami Portfolio">
+    <link rel="stylesheet" href="ishimwe.css">
+    <style>
+       .error-message {
+            color:red;
+            margin-top: 2px;
+            text-transform: lowercase;
+        } 
+        #passwordError{
+            color:red;
+            margin-top: 2px;
+            text-transform: lowercase;
+        }
+        #nameError{
+            color:red;
+            margin-top: 2px;
+            text-transform: lowercase;
+        }
+        #emailError{
+            color:red;
+            margin-top: 2px;
+            text-transform: lowercase;  
+        }
+    </style>
+</head>
+
+
+<body style="background-color: #020617;">
+    <div class="Container">
+        <!-- Navigation starts here -->
+        <div class="navigation">
+            <div class="logo">About<span id="logo_color">Me</span></div>
+            <div class="navigation-menu" id="myTopnav">
+                <ul>
+                    <li><a id="active" href="index.html">HOME</a></li>
+                    <li><a href="index.html">ABOUT</a></li>
+                    <li><a href="#skills">SKILLS</a></li>
+                    <li><a href="#myportfolio">PORTFOLIO</a></li>
+                    <li><a href="#pdf">RESUME</a></li>
+                    <li><a href="#blogs">BLOG</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#register">Register</a></li>
+                </ul>
+            </div>
+            <div class="menuicon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="Register" id="register">
+            <div class="conected">Stay <span style="color: #D4A81E;;">Connected</span></div>
+            <div class="Form_Container">
+
+                <div class="form">
+                    <div class="header">
+                        <div class="left">Login</div>
+                        <div class="right">Register</div>
+                    </div>
+                    <form id="registrationForm" action="" method="post" onsubmit="return validateForm()">
+                        <p><span>Name:</span><br>
+                            <input type="text" id="name" name="name">
+                            <span id="nameError" class="error-message"></span>
+                        </p>
+                        <p><span>Email:</span><br>
+                            <input type="email" id="email" name="email">
+                            <span id="emailError" class="error-message"></span>
+                        </p>
+                        <p><span>Password:</span><br>
+                            <input type="password" id="password" name="password">
+                            <span id="passwordError" class="error-message"></span>
+                        </p>
+                        <p>
+                            <input style="background-color: #D4A81E;" type="submit" value="Register">
+                        </p>
+                    </form>
+
+                </div>
+            </div>
+           
+        </div>
+<!-- Starting of Footer-->
+<div class="container-footer">
+<div class="userful-links">
+    <h4>USEFUL LINKS</h4>
+    
+                <p><a id="active" href="#landingpage">HOME</a></p>
+                <p><a href="#aboutme">ABOUT</a></p>
+                <p><a href="#skills">SKILLS</a></p>
+                <p><a href="#myportfolio">PORTFOLIO</a></p>
+                <p><a href="#pdf">RESUME</a></p>
+                <p><a href="#blogs">BLOG</a></p>
+                <p><a href="#contact">CONTACT</a></p>
+                <p><a href="#register">Register</a></p>
+</div>
+<div class="contact">
+    <h4>&nbsp;Contact</h4>
+    <p><i class="fa-solid fa-building-columns"></i>&nbsp;University Of Rwanda</p>
+    <p><i class="fa-solid fa-location-dot"></i>&nbsp;Kigali, Rwanda</p>
+    <p><i class="fa-solid fa-globe"></i>&nbsp;www.aboutme.rw</p>
+    <p><i class="fa-solid fa-universal-access"></i>&nbsp;SmartKodesha@gmail.com</p>
+    <p><i class="fa-solid fa-phone"></i>&nbsp;+250791966291</p>
+
+</div>
+<div class="company">
+
+     <div class="github" style="font-size: 47px;color: yellow;"><i class="fa-brands fa-github"></i></div>
+    <p>About Me</p>
+    <p>Your dreams comes into reality </p>
+    <p><span id="tqs">&copy;</span> All right reserved</p>
+    <strong>Designed by Ami Paradis</strong>
+
+</div>
+<div class="followus">
+    <h4>Follow me on</h4>
+    <a href="https://www.instagram.com/ami_paradis/"><i class="fa-brands fa-x-twitter" id="social"></i>
+    <a href="https://www.instagram.com/ami_paradis/"><i class="fa-brands fa-instagram" id="social"></i></a>
+    <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-brands fa-linkedin" id="social"></i></a>
+    <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-brands fa-google-plus-g" id="social"></i></a>
+    <a href="https://www.facebook.com/gaparagapasi.patron"><i class="fa-brands fa-facebook" id="social"></i></a>
+</div>
+</div>
+</div>
+
+<!-- Ending of Footer -->
+
+</div>
+
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        // Reset error messages
+        document.getElementById('nameError').innerHTML = '';
+        document.getElementById('emailError').innerHTML = '';
+        document.getElementById('passwordError').innerHTML = '';
+
+        // Validate Name
+        if (name === '') {
+    document.getElementById('nameError').innerHTML = 'Name is required';
+    return false;
+} else if (/[\d]/.test(name)) {
+    document.getElementById('nameError').innerHTML = 'Name must not contain numbers';
+    return false;
+} else if (name.length <= 10) {
+    document.getElementById('nameError').innerHTML = 'Name must be greater than 10 characters';
+    return false;
+}
+
+        // Validate Email
+        if (email === '') {
+            document.getElementById('emailError').innerHTML = 'Email is required';
+            return false;
+        } else if (!validateEmail(email)) {
+            document.getElementById('emailError').innerHTML = 'Invalid email format';
+            return false;
+        }
+
+        // Validate Password
+        if (password === '') {
+            document.getElementById('passwordError').innerHTML = 'Password is required';
+            return false;
+        } else if (password.length < 12) {
+            document.getElementById('passwordError').innerHTML = 'Password must be at least 12 characters';
+            return false;
+        } else if (!/[a-zA-Z].*[a-zA-Z]/.test(password)) {
+            document.getElementById('passwordError').innerHTML = 'Password must contain at least 2 letters';
+            return false;
+        } else if (!/[\W_]/.test(password)) {
+            document.getElementById('passwordError').innerHTML = 'Password must contain at least 1 special character';
+            return false;
+        }else if (/\d$/.test(email)) {
+    document.getElementById('emailError').innerHTML = '*Email must not end with a number';
+    return false;
+}
+
+return true;
+    }
+
+    function validateEmail(email) {
+        // Simple email validation, you can use a more complex regular expression if needed
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+</script>
+</body>
+
+
+</body>
+
+</html>

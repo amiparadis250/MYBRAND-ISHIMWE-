@@ -12,6 +12,12 @@
     <title> About me</title>
     <meta name="description" content="This is ISHIMWE Ami Portfolio">
     <link rel="stylesheet" href="ishimwe.css">
+    <style>
+        .error-message {
+            color: red;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,10 +34,14 @@
                     <li><a href="#pdf">RESUME</a></li>
                     <li><a href="#blogs">BLOG</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="#register">Register</a></li>
+                    <li><a href="login.html">Register</a></li>
                 </ul>
             </div>
-            <div class="menuicon"><i class="fa-solid fa-bars"></i></div>
+            <div class="menuicon ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <!-- navigation ended here -->
         <!-- landing page starts here -->
@@ -306,17 +316,18 @@
                         <p><span>Website _</span> www.abc.aboutme.com</p>
                     </div>
                     <div class="contact" id="contact">
-                        <form>
-                            <input id="name" type="text" placeholder="Name"><br>
-                            <textarea id="comment" rows="5" cols="40" placeholder="Enter your message"></textarea><br>
-                            <button type="text">Contact Us</button>
-                        </form>
+    <form onsubmit="return validateForm()">
+        <input id="name" type="text" placeholder="Name"><br>
+        <span id="nameError" class="error-message"></span>
+        <textarea id="comment" rows="5" cols="40" placeholder="Enter your message"></textarea><br>
+        <button type="submit">Contact Us</button>
+    </form>
 
                     </div>
                 </div>
             </div>
          
-            <div class="Register" id="register">
+            <!-- <div class="Register" id="register">
                 <div class="conected">Stay <span style="color: #D4A81E;;">Connected</span></div>
                 <div class="Form_Container">
 
@@ -338,13 +349,13 @@
                                 <input type="password">
 
                             </p>
-                            <button> <a href="ADMIN PANEL/Statics.html" style="text-decoration: none;">Register</a></button>
+                            <button> <a href="ADMIN PANEL/Statics.html" style="text-decoration: none;background-color: #D4A81E;">Subscribe</a></button>
                         </form>
 
                     </div>
                 </div>
                
-            </div>
+            </div> -->
 <!-- Starting of Footer-->
 <div class="container-footer">
     <div class="userful-links">
@@ -389,22 +400,43 @@
 </div>
 
 <!-- Ending of Footer -->
-        </div>
-        <script>
-            // Select the menu icon and the navigation menu elements
+   
+</div>
+<script>
+    function validateForm() {
+        var name = document.getElementById('name').value;
+
+        // Reset error message
+        document.getElementById('nameError').innerHTML = '';
+
+        // Validate Name
+        if (name === '') {
+            document.getElementById('nameError').innerHTML = 'Name is required';
+            return false;
+        } else if (/[\d!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
+            document.getElementById('nameError').innerHTML = 'Name cannot contain numbers or special characters';
+            return false;
+        }
+
+        return true;
+    }
+</script>
+<script>
+    // Select the menu icon and the navigation menu elements
 var menuIcon = document.querySelector('.menuicon');
 var navMenu = document.querySelector('.navigation-menu');
 
 // Add a click event listener to the menu icon
 menuIcon.addEventListener('click', function() {
-  // Toggle the display of the navigation menu
-  navMenu.classList.toggle('active');
+// Toggle the display of the navigation menu
+navMenu.classList.toggle('active');
 });
 
-        </script>
-  
+</script>
 
 
+<script src="script.js"></script>
 </body>
 
 </html>
+
