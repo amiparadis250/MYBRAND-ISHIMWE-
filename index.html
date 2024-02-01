@@ -17,6 +17,98 @@
             color: red;
             margin-top: 5px;
         }
+        .superdiv{
+            max-width: 998px;
+            width:100%;
+            margin: 0 auto;
+        
+           
+
+        }
+       
+        @media (max-width: 768px) {
+    .bloglist {
+        flex-direction: column; 
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        padding: 0; 
+    }
+
+    .Eachblog_container {
+        width: 90%; 
+        margin-bottom: 20px; 
+        box-shadow: 0px 4px 6px rgba(0,0,0,0.1); 
+    }
+
+    .helper {
+        position: static; 
+        display: block;
+        margin-top: 10px;
+        font-size: larger; 
+    }
+}
+
+
+        .superdiv2{
+            position: relative;
+            padding-right: 0px;
+            align-items: flex-start;
+        }
+        .bloglist{
+            display: flex;
+            flex-direction: row;
+            gap:30px;
+            font-size:0;
+            overflow: auto;
+            margin-bottom:20px;
+            scrollbar-width: none;
+           align-items: center;
+            justify-content: flex-start;
+           }
+         .bloglist::-webkit-scrollbar{
+            display:none;
+        }
+       .Eachblog_container{
+        
+            width:300px;
+            height:auto;
+            display:flex;
+            flex-direction:column;
+        }
+        .blog-image img{
+            width:300px;
+            object-fit: cover;
+            
+        }
+        .blogscontainer{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .helper{
+            position: absolute;
+            top:50%;
+            width:60px;
+            padding:5px;
+            border-radius:5px;
+            background-color: aliceblue;
+        }
+         #right{
+            right:-30px;
+            background-color: yellow;
+            outline: none;
+            border: none;
+        }
+        #left{
+          left: -30px;  
+          display: block;
+          background-color: yellow;
+          outline: none;
+          border: none;
+        }
+    
     </style>
 </head>
 
@@ -248,13 +340,33 @@
                         coding wisdom, and innovative solutions in a concise and engaging format.
                         Stay on track of release of new latest technologies
                     </p>
-                   
+                    
+                    
+                     <div class="superdiv">
+                        <div class="superdiv2">
 
+                    <button id="left" class="helper">left</button>
+                             
                     <div class="bloglist" id="blogSlider">
                         <div class="Eachblog_container">
                             <div class="blog-image"><img src="images/blogs/Image.png" alt="" width="300px" class="img"></div>
                             <div class="bloginfo">
-                                <div class="title">Write once run every Where</div>
+                                <div class="title">Write once run every Where1</div>
+                                <span>Lorem ipsum dolor sit amet,
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
+                                <span id="t">Learn More </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup  style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Image.png" alt="" width="300px" class="img"></div>
+                            <div class="bloginfo">
+                                <div class="title">Write once run every Where1</div>
                                 <span>Lorem ipsum dolor sit amet,
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
@@ -270,7 +382,7 @@
                         <div class="Eachblog_container">
                             <div class="blog-image"><img src="images/blogs/blogimage.png" alt="" width="300px"></div>
                             <div class="bloginfo">
-                                <div class="title">My ATLP Journey</div>
+                                <div class="title">My ATLP Journey2</div>
                                 <span>Lorem ipsum dolor sit amet,
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
@@ -286,7 +398,7 @@
                         <div class="Eachblog_container">
                             <div class="blog-image"><img src="images/blogs/blogimage.png" alt="" width="300px"></div>
                             <div class="bloginfo">
-                                <div class="title">My ATLP Journey</div>
+                                <div class="title">My ATLP Journey3</div>
                                 <span>Lorem ipsum dolor sit amet,
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
@@ -302,7 +414,7 @@
                         <div class="Eachblog_container">
                             <div class="blog-image"><img src="images/blogs/blogimage.png" alt="" width="300px"></div>
                             <div class="bloginfo">
-                                <div class="title">My ATLP Journey</div>
+                                <div class="title">My ATLP Journey4</div>
                                 <span>Lorem ipsum dolor sit amet,
                                     consectetur &nbsp;adipiscing elit.
                                     Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
@@ -319,6 +431,21 @@
                         <div class="Eachblog_container">
                             <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
                             <div class="bloginfo">
+                                <div class="title">Majesty of coding5</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
                                 <div class="title">Majesty of coding</div>
                                 <span>Lorem ipsum dolor sit amet
                                     consectetur &nbsp;adipiscing elit.
@@ -331,8 +458,174 @@
                                 </div>
                             </div>
                         </div>
-                        
-                        
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding5</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding60</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Eachblog_container">
+                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
+                            <div class="bloginfo">
+                                <div class="title">Majesty of coding100</div>
+                                <span>Lorem ipsum dolor sit amet
+                                    consectetur &nbsp;adipiscing elit.
+                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
+                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
+                                <div class="blogicons">
+                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
+                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
+                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="right" class="helper">right</button> 
+                </div> 
                         
                     </div>
                 </div>
@@ -443,7 +736,49 @@ navMenu.classList.toggle('active');
 });
 
 </script>
-
+<script>
+    const initSlider = () => {
+        var bloglist = document.getElementById("blogSlider");
+        var slideButtons = document.querySelectorAll(".helper");
+    
+        console.log(slideButtons);
+    
+        slideButtons.forEach(button => {
+            console.log(button.id);
+            button.addEventListener("click", () => {
+                const direction = button.id === "left" ? -1 : 1;
+                const scrollAmount = bloglist.clientWidth * direction;
+    
+                bloglist.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                console.log(bloglist.clientWidth);
+            });
+        });
+    
+        const handleSlideButtons = () => {
+            slideButtons[0].style.display = "block";
+    slideButtons[1].style.display = "block";
+        };
+    
+        const getMaxScrollLeft = () => {
+            const blogContainers = document.querySelectorAll(".Eachblog_container");
+            const totalWidth = Array.from(blogContainers).reduce((acc, container) => acc + container.offsetWidth, 0);
+            return totalWidth - bloglist.clientWidth;
+        };
+    
+        bloglist.addEventListener("scroll", () => {
+            handleSlideButtons();
+        });
+    
+        // Set the initial scrollLeft after elements have loaded
+        setTimeout(() => {
+            bloglist.scrollLeft = 0;
+            handleSlideButtons();
+        }, 0);
+    };
+    
+    window.addEventListener("load", initSlider);
+    </script>
+    
 
 <script src="script.js"></script>
 </body>
