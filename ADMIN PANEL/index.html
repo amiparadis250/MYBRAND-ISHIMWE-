@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="mainContents">
-      <div class="Sidebar">
+      <div class="Sidebar" style="height: 600; " >
         <a href="users.html"> <div class="sections">
           <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
         </div></a>
@@ -57,7 +57,7 @@
        
     </div>
     
-    <div class="rightside">
+    <div class="rightside" >
         <div class="usersblog">
             <!-- <div class="editusers">
                 <svg id="add"   xmlns="http://www.w3.org/2000/svg" width="60" height="57" viewBox="0 0 97 84" fill="none">
@@ -79,14 +79,36 @@
     <h2>Create Blog</h2>
     <h4>Title</h4>
     <input type="text" id="blog-title" />
+    <h4>Image</h4>
+    <input type="file" id="fileInput">
+    <div class="selected-file" id="selectedFile"></div>
+    <div class="texxeditor" style="width: 80%;">
     <textarea id="richtext"></textarea>
-    <button type="submit" id="saveblog" style="width: 80%;height: 30px; margin-top: -40px;background-color: yellow;outline: none;"><span>Create Blog</span></button>
+  </div>
+    <button type="submit" id="saveblog" style="width: 80%;height: 30px; margin-top: 10px;background-color: yellow;border: none;"><span>Create Blog</span></button>
   </div>
   
     </div>
 </div>
 </div>
+<script>
+  // Get the file input and the element to display the selected file name
+  var fileInput = document.getElementById('fileInput');
+  var selectedFileElement = document.getElementById('selectedFile');
 
+  // Add a change event listener to the file input
+  fileInput.addEventListener('change', function() {
+      // Get the selected file name
+      var fileName = fileInput.files[0] ? fileInput.files[0].name : 'No file chosen';
+
+      // Update the content and style of the selected file element
+      selectedFileElement.textContent = fileName;
+
+      // Toggle the class based on whether a file is chosen or not
+      selectedFileElement.classList.toggle('no-file-chosen', !fileInput.files[0]);
+      selectedFileElement.classList.toggle('file-chosen', !!fileInput.files[0]);
+  });
+</script>
 
 <script src="JS/texteditor.js"></script>
 </body>
