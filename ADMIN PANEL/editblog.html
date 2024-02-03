@@ -138,5 +138,75 @@
 </div>
 </div>
     
+
+<script>
+   function loadBlogs() {
+            var blogTable = document.querySelector("table");
+            var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+            for (var i = 0; i < existingBlogs.length; i++) {
+                var blog = existingBlogs[i];
+
+                // Add a row for each blog
+                var row = blogTable.insertRow(-1);
+                var cellNumber = row.insertCell(0);
+                var cellTitle = row.insertCell(1);
+                var cellTopic = row.insertCell(2);
+                var cellAuthor = row.insertCell(3);
+                var cellViews = row.insertCell(4);
+                var cellActions = row.insertCell(5);
+
+                // Fill in the cells with blog data
+                cellNumber.textContent = i + 1;
+                cellTitle.textContent = blog.title;
+                cellTopic.textContent = blog.topic; // Adjust this based on your data structure
+                cellAuthor.textContent = blog.author;
+                cellViews.textContent = blog.views;
+
+                // Add action buttons for each blog
+                var deleteButton = document.createElement("button");
+                deleteButton.textContent = "Delete";
+                deleteButton.addEventListener("click", createDeleteHandler(i));
+                
+                var unpublishButton = document.createElement("button");
+                unpublishButton.textContent = "Unpublish";
+                unpublishButton.addEventListener("click", createUnpublishHandler(i));
+
+                cellActions.appendChild(deleteButton);
+                cellActions.appendChild(unpublishButton);
+            }
+        }
+
+        function createDeleteHandler(index) {
+            return function () {
+                deleteBlog(index);
+            };
+        }
+
+        function createUnpublishHandler(index) {
+            return function () {
+                unpublishBlog(index);
+            };
+        }
+
+        function deleteBlog(index) {
+            var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            existingBlogs.splice(index, 1);
+            localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+            location.reload(); // Refresh the page to reflect the changes
+        }
+
+        function unpublishBlog(index) {
+            var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            existingBlogs[index].published = false; // Add a 'published' property to your blog object
+            localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+            location.reload(); // Refresh the page to reflect the changes
+        }
+
+        window.onload = function () {
+            loadBlogs();
+        };
+    </script> 
+</script>
 </body>
 </html>

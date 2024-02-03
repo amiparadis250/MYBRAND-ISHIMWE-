@@ -546,7 +546,7 @@ body {
 
 /* END OF MY PORTFOLIO */
 /* START OF MY BLOGS */
-/* //sliding cards */
+
 /* Add styling for the slider controls */
 
 
@@ -586,7 +586,7 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    width: 70%;
+    width: 100%;
     padding-bottom: 20px;
 }
 
@@ -605,8 +605,7 @@ body {
     font-style: normal;
     font-weight: 500;
     line-height: 123.6%;
-
-    text-transform: capitalize;
+   text-transform: capitalize;
     margin-left: 4px;
    
 }
@@ -646,8 +645,7 @@ body {
 .Eachblog_container {
     
     background-color: #FFFFFF;
-    /* margin: 18px;
-    width:100px */
+    /
    
 }
 

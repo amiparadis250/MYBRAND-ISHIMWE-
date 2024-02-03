@@ -25,7 +25,13 @@
            
 
         }
-       
+    
+.blog-img {
+  width: 100%; 
+  height: 240px;
+  object-fit: cover;
+  
+}
         @media (max-width: 768px) {
     .bloglist {
         flex-direction: column; 
@@ -40,6 +46,7 @@
         margin-bottom: 20px; 
         box-shadow: 0px 4px 6px rgba(0,0,0,0.1); 
     }
+   
 
     .helper {
         position: static; 
@@ -71,10 +78,11 @@
         }
        .Eachblog_container{
         
-            width:300px;
-            height:auto;
-            display:flex;
-            flex-direction:column;
+flex: 1 1 300px; 
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
         }
         .blog-image img{
             width:300px;
@@ -123,10 +131,10 @@
                     <li><a href="#aboutme">ABOUT</a></li>
                     <li><a href="#skills">SKILLS</a></li>
                     <li><a href="#myportfolio">PORTFOLIO</a></li>
-                    <li><a href="#pdf">RESUME</a></li>
+                    <li><a href="ADMIN PANEL/editblog.html">DASHBOARD</a></li>
                     <li><a href="#blogs">BLOG</a></li>
                     <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="login.html">Register</a></li>
+                    <li><a href="ADMIN PANEL/index.html">Register</a></li>
                 </ul>
             </div>
             <div class="menuicon ham-menu">
@@ -578,51 +586,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="Eachblog_container">
-                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
-                            <div class="bloginfo">
-                                <div class="title">Majesty of coding60</div>
-                                <span>Lorem ipsum dolor sit amet
-                                    consectetur &nbsp;adipiscing elit.
-                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
-                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
-                                <div class="blogicons">
-                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
-                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
-                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Eachblog_container">
-                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
-                            <div class="bloginfo">
-                                <div class="title">Majesty of coding60</div>
-                                <span>Lorem ipsum dolor sit amet
-                                    consectetur &nbsp;adipiscing elit.
-                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
-                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
-                                <div class="blogicons">
-                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
-                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
-                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="Eachblog_container">
-                            <div class="blog-image"><img src="images/blogs/Iamge.png" alt="" width="300px"></div>
-                            <div class="bloginfo">
-                                <div class="title">Majesty of coding100</div>
-                                <span>Lorem ipsum dolor sit amet
-                                    consectetur &nbsp;adipiscing elit.
-                                    Vitae nulla diam in ac &nbsp;dictum a urna</span><br>
-                                <span id="t"><a href="singleBlogview.html">Learn More</a> </span>
-                                <div class="blogicons">
-                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
-                                <span><i class="fa-solid fa-comment"></i><sup style="color:black; font-weight: bolder;">5</sup></span>
-                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
-                                </div>
-                            </div>
-                        </div>
+                       
+                        
+                        
                     </div>
                     <button id="right" class="helper">right</button> 
                 </div> 
@@ -701,6 +667,7 @@
     </div>
 </div>
 </div>
+<button id="clearLocalStorage">Clear Local Storage</button>
 
 <!-- Ending of Footer -->
    
@@ -725,63 +692,53 @@
     }
 </script>
 <script>
-
-var menuIcon = document.querySelector('.menuicon');
-var navMenu = document.querySelector('.navigation-menu');
-
-var navLinks = document.querySelectorAll('.navigation-menu a');
-r
-var sections = document.querySelectorAll('.section');
-
-/
-function scrollToSection(target) {
-  document.querySelector(target).scrollIntoView({
-    behavior: 'smooth'
-  });
-}
-
-
-function adjustSectionMargin(leftMargin) {
-  sections.forEach(function(section) {
-    section.style.marginLeft = leftMargin;
-  });
-}
-
-
-menuIcon.addEventListener('click', function() {
- 
-  navMenu.classList.toggle('active');
-
- 
-  if (navMenu.classList.contains('active')) {
-    adjustSectionMargin('1000px');
-  } else {
+    var menuIcon = document.querySelector('.menuicon');
+    var navMenu = document.querySelector('.navigation-menu');
+    var navLinks = document.querySelectorAll('.navigation-menu a');
+    var sections = document.querySelectorAll('.section');
   
-    adjustSectionMargin('0');
-  }
-});
-
-
-navLinks.forEach(function(link) {
-  link.addEventListener('click', function(event) {
+    function scrollToSection(target) {
+      var targetElement = document.querySelector(target);
+      
+      if (targetElement) {
+        var offsetTop = targetElement.offsetTop;
   
-    event.preventDefault();
-
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    }
   
-    var targetSection = link.getAttribute('href');
-
+    function adjustSectionMargin(leftMargin) {
+      sections.forEach(function(section) {
+        section.style.marginLeft = leftMargin;
+      });
+    }
   
-    scrollToSection(targetSection);
-
-    navMenu.classList.remove('active');
-
-   
-    adjustSectionMargin('0');
-  });
-});
-
-
-</script>
+    menuIcon.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+  
+      if (navMenu.classList.contains('active')) {
+        adjustSectionMargin('1000px');
+      } else {
+        adjustSectionMargin('0');
+      }
+    });
+  
+    navLinks.forEach(function(link) {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+  
+        var targetSection = link.getAttribute('href');
+        scrollToSection(targetSection);
+  
+        navMenu.classList.remove('active');
+        adjustSectionMargin('0');
+      });
+    });
+  </script>
+  
 <script>
     const initSlider = () => {
         var bloglist = document.getElementById("blogSlider");
@@ -825,8 +782,42 @@ navLinks.forEach(function(link) {
     window.addEventListener("load", initSlider);
     </script>
     
-
 <script src="script.js"></script>
+<script>
+// Load existing blogs from local storage
+    var storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+    var blogSlider = document.getElementById("blogSlider");
+
+    storedBlogs.forEach(function(blog) {
+      var blogContainer = document.createElement("div");
+      blogContainer.classList.add("Eachblog_container");
+
+      blogContainer.innerHTML = `
+        <div class="blog-image"><img src="${blog.image}" class="blog-img"></div>
+        <div class="bloginfo">
+          <div class="title">${blog.title}</div>
+          <span>${blog.desc}</span><br>
+          <span id="t">Learn More </span>
+          <div class="blogicons">
+            <span><i class="fa-solid fa-thumbs-up"></i></span>
+            <span><i class="fa-solid fa-comment"></i></span>
+            <span><i class="fa-solid fa-eye"></i></span>
+          </div>
+        </div>
+      `;
+
+      blogSlider.appendChild(blogContainer);
+    });
+
+    // Clear all data in localStorage
+    document.getElementById("clearLocalStorage").addEventListener("click", function() {
+      localStorage.clear();
+      alert("LocalStorage cleared!");
+    });
+
+</script>
+
+
 </body>
 
 </html>
