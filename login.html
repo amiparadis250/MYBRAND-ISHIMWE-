@@ -13,6 +13,9 @@
     <meta name="description" content="This is ISHIMWE Ami Portfolio">
     <link rel="stylesheet" href="ishimwe.css">
     <style>
+        .error-input {
+            border: 1px solid red;
+        }
        .error-message {
             color:red;
             margin-top: 2px;
@@ -71,7 +74,7 @@
                             <span id="nameError" class="error-message"></span>
                         </p>
                         <p><span>Email:</span><br>
-                            <input type="email" id="email" name="email">
+                            <input type="text" id="email" name="email">
                             <span id="emailError" class="error-message"></span>
                         </p>
                         <p><span>Password:</span><br>
@@ -136,63 +139,81 @@
 
 <script>
     function validateForm() {
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
+            var nameInput = document.getElementById('name');
+            var emailInput = document.getElementById('email');
+            var passwordInput = document.getElementById('password');
 
-        // Reset error messages
-        document.getElementById('nameError').innerHTML = '';
-        document.getElementById('emailError').innerHTML = '';
-        document.getElementById('passwordError').innerHTML = '';
+            // Reset error messages and border colors
+            document.getElementById('nameError').innerHTML = '';
+            document.getElementById('emailError').innerHTML = '';
+            document.getElementById('passwordError').innerHTML = '';
 
-        // Validate Name
-        if (name === '') {
-    document.getElementById('nameError').innerHTML = 'Name is required';
-    return false;
-} else if (/[\d]/.test(name)) {
-    document.getElementById('nameError').innerHTML = 'Name must not contain numbers';
-    return false;
-} else if (name.length <= 10) {
-    document.getElementById('nameError').innerHTML = 'Name must be greater than 10 characters';
-    return false;
-}
+            nameInput.classList.remove('error-input');
+            emailInput.classList.remove('error-input');
+            passwordInput.classList.remove('error-input');
 
-        // Validate Email
-        if (email === '') {
-            document.getElementById('emailError').innerHTML = 'Email is required';
-            return false;
-        } else if (!validateEmail(email)) {
-            document.getElementById('emailError').innerHTML = 'Invalid email format';
-            return false;
+            var name = nameInput.value;
+            var email = emailInput.value;
+            var password = passwordInput.value;
+
+            // Validate Name
+            if (name === '') {
+                document.getElementById('nameError').innerHTML = 'Name is required';
+                nameInput.classList.add('error-input');
+                return false;
+            } else if (/[\d]/.test(name)) {
+                document.getElementById('nameError').innerHTML = 'Name must not contain numbers';
+                nameInput.classList.add('error-input');
+                return false;
+            } else if (name.length <= 10) {
+                document.getElementById('nameError').innerHTML = 'Name must be greater than 10 characters';
+                nameInput.classList.add('error-input');
+                return false;
+            }
+
+            // Validate Email
+            if (email === '') {
+                document.getElementById('emailError').innerHTML = 'Email is required';
+                emailInput.classList.add('error-input');
+                return false;
+            } else if (!validateEmail(email)) {
+                document.getElementById('emailError').innerHTML = 'Invalid email format';
+                emailInput.classList.add('error-input');
+                return false;
+            }
+
+            // Validate Password
+            if (password === '') {
+                document.getElementById('passwordError').innerHTML = 'Password is required';
+                passwordInput.classList.add('error-input');
+                return false;
+            } else if (password.length < 12) {
+                document.getElementById('passwordError').innerHTML = 'Password must be at least 12 characters';
+                passwordInput.classList.add('error-input');
+                return false;
+            } else if (!/[a-zA-Z].*[a-zA-Z]/.test(password)) {
+                document.getElementById('passwordError').innerHTML = 'Password must contain at least 2 letters';
+                passwordInput.classList.add('error-input');
+                return false;
+            } else if (!/[\W_]/.test(password)) {
+                document.getElementById('passwordError').innerHTML = 'Password must contain at least 1 special character';
+                passwordInput.classList.add('error-input');
+                return false;
+            } else if (/\d$/.test(email)) {
+                document.getElementById('emailError').innerHTML = '*Email must not end with a number';
+                emailInput.classList.add('error-input');
+                return false;
+            }
+
+            return true;
         }
 
-        // Validate Password
-        if (password === '') {
-            document.getElementById('passwordError').innerHTML = 'Password is required';
-            return false;
-        } else if (password.length < 12) {
-            document.getElementById('passwordError').innerHTML = 'Password must be at least 12 characters';
-            return false;
-        } else if (!/[a-zA-Z].*[a-zA-Z]/.test(password)) {
-            document.getElementById('passwordError').innerHTML = 'Password must contain at least 2 letters';
-            return false;
-        } else if (!/[\W_]/.test(password)) {
-            document.getElementById('passwordError').innerHTML = 'Password must contain at least 1 special character';
-            return false;
-        }else if (/\d$/.test(email)) {
-    document.getElementById('emailError').innerHTML = '*Email must not end with a number';
-    return false;
-}
-
-return true;
-    }
-
-    function validateEmail(email) {
-        // Simple email validation, you can use a more complex regular expression if needed
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-</script>
+        function validateEmail(email) {
+            // Simple email validation, you can use a more complex regular expression if needed
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+   </script>
 </body>
 
 

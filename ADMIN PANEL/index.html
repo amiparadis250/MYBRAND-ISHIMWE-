@@ -94,55 +94,59 @@
     </div>
 
     <script src="JS/texteditor.js"></script>
-    <script>
-  window.addEventListener("load", function() {
-    const saveBlogButton = document.getElementById("saveblog");
-    const blogTitle = document.getElementById("blog-title");
-    const fileInput = document.getElementById("fileInput");
-    const description = document.getElementById("description");
-    const richText = document.getElementById("richtext");
+   <!-- Script for addBlog.html -->
+<script type="text/javascript" src="/richtexteditor/rte.js"></script>
+<script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
+<script src="JS/texteditor.js"></script>
+<script>
+    window.addEventListener("load", function() {
+        const saveBlogButton = document.getElementById("saveblog");
+        const blogTitle = document.getElementById("blog-title");
+        const fileInput = document.getElementById("fileInput");
+        const description = document.getElementById("description");
+        const richText = document.getElementById("richtext");
 
-    saveBlogButton.addEventListener("click", function() {
-      console.log("Clicked Save Blog");
+        saveBlogButton.addEventListener("click", function() {
+            console.log("Clicked Save Blog");
 
-      var title = blogTitle.value;
-      var image = fileInput.files[0];
-      var desc = description.value;
-      var text = richText.value;
+            var title = blogTitle.value;
+            var image = fileInput.files[0];
+            var desc = description.value;
+            var text = richText.value;
 
-      console.log("Title:", title);
-      console.log("Image:", image);
-      console.log("Description:", desc);
-      console.log("Text:", text);
+            console.log("Title:", title);
+            console.log("Image:", image);
+            console.log("Description:", desc);
+            console.log("Text:", text);
 
-      if (title && image && desc && text) {
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          var imageSrc = e.target.result;
+            if (title && image && desc && text) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var imageSrc = e.target.result;
 
-          var blog = {
-            title: title,
-            image: imageSrc,
-            desc: desc,
-            text: text
-          };
+                    var blog = {
+                        title: title,
+                        image: imageSrc,
+                        desc: desc,
+                        text: text
+                    };
 
-          saveBlogToLocalStorage(blog);
-          alert("Blog saved successfully!");
-        };
+                    saveBlogToLocalStorage(blog);
+                    alert("Blog saved successfully!");
+                };
 
-        reader.readAsDataURL(image);
-      } else {
-        alert("Please fill all the fields!");
-      }
+                reader.readAsDataURL(image);
+            } else {
+                alert("Please fill all the fields!");
+            }
+        });
+
+        function saveBlogToLocalStorage(blog) {
+            var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            existingBlogs.push(blog);
+            localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+        }
     });
-
-    function saveBlogToLocalStorage(blog) {
-      var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-      existingBlogs.push(blog);
-      localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-    }
-  });
 </script>
 </body>
 </html>

@@ -692,53 +692,45 @@ flex: 1 1 300px;
     }
 </script>
 <script>
+document.addEventListener('DOMContentLoaded', function() {
     var menuIcon = document.querySelector('.menuicon');
     var navMenu = document.querySelector('.navigation-menu');
     var navLinks = document.querySelectorAll('.navigation-menu a');
-    var sections = document.querySelectorAll('.section');
-  
+
     function scrollToSection(target) {
-      var targetElement = document.querySelector(target);
-      
-      if (targetElement) {
-        var offsetTop = targetElement.offsetTop;
-  
-        window.scrollTo({
-          top: offsetTop,
-          behavior: 'smooth'
+        var targetElement = document.getElementById(target);
+
+        if (targetElement) {
+            var offsetTop = targetElement.offsetTop;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    menuIcon.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+    });
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            var targetSection = link.getAttribute('href').substring(1);
+            scrollToSection(targetSection);
+
+            navMenu.classList.remove('active');
         });
-      }
-    }
-  
-    function adjustSectionMargin(leftMargin) {
-      sections.forEach(function(section) {
-        section.style.marginLeft = leftMargin;
-      });
-    }
-  
-    menuIcon.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-  
-      if (navMenu.classList.contains('active')) {
-        adjustSectionMargin('1000px');
-      } else {
-        adjustSectionMargin('0');
-      }
     });
-  
-    navLinks.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
-  
-        var targetSection = link.getAttribute('href');
-        scrollToSection(targetSection);
-  
-        navMenu.classList.remove('active');
-        adjustSectionMargin('0');
-      });
-    });
-  </script>
-  
+});
+
+</script>
+
+
+
+
 <script>
     const initSlider = () => {
         var bloglist = document.getElementById("blogSlider");
@@ -783,42 +775,48 @@ flex: 1 1 300px;
     </script>
     
 <script src="script.js"></script>
+<!-- Script for displayBlogs.html -->
 <script>
-// Load existing blogs from local storage
-    var storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-    var blogSlider = document.getElementById("blogSlider");
+    document.addEventListener("DOMContentLoaded", function () {
+        var storedBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+        var blogSlider = document.getElementById("blogSlider");
 
-    storedBlogs.forEach(function(blog) {
-      var blogContainer = document.createElement("div");
-      blogContainer.classList.add("Eachblog_container");
+        storedBlogs.forEach(function(blog, index) {
+            var blogContainer = document.createElement("div");
+            blogContainer.classList.add("Eachblog_container");
 
-      blogContainer.innerHTML = `
-        <div class="blog-image"><img src="${blog.image}" class="blog-img"></div>
-        <div class="bloginfo">
-          <div class="title">${blog.title}</div>
-          <span>${blog.desc}</span><br>
-          <span id="t">Learn More </span>
-          <div class="blogicons">
-            <span><i class="fa-solid fa-thumbs-up"></i></span>
-            <span><i class="fa-solid fa-comment"></i></span>
-            <span><i class="fa-solid fa-eye"></i></span>
-          </div>
-        </div>
-      `;
+            blogContainer.innerHTML = `
+                <div class="blog-image"><img src="${blog.image}" class="blog-img"></div>
+                <div class="bloginfo" id="blogInfo_${index}">
+                    <div class="title" id="blogTitle_${index}">${blog.title}</div>
+                    <span id="blogDesc_${index}">${blog.desc}</span><br>
+                    <span id="learnMore_${index}" class="learn-more">Learn More </span>
+                    <div class="blogicons" id="blogIcons_${index}">
+                        <span id="thumbsUp_${index}"><i class="fa-solid fa-thumbs-up"></i></span>
+                        <span id="comment_${index}"><i class="fa-solid fa-comment"></i></span>
+                        <span id="eye_${index}"><i class="fa-solid fa-eye"></i></span>
+                    </div>
+                </div>
+            `;
 
-      blogSlider.appendChild(blogContainer);
+            blogSlider.appendChild(blogContainer);
+
+            // Add click event listener for "Learn More" to navigate to detailed view
+            var learnMoreElement = document.getElementById(`learnMore_${index}`);
+            learnMoreElement.addEventListener("click", function() {
+                window.location.href = `detailedView.html?blogId=${index}`;
+            });
+        });
+
+        document.getElementById("clearLocalStorage").addEventListener("click", function() {
+            localStorage.clear();
+            alert("LocalStorage cleared!");
+        });
     });
-
-    // Clear all data in localStorage
-    document.getElementById("clearLocalStorage").addEventListener("click", function() {
-      localStorage.clear();
-      alert("LocalStorage cleared!");
-    });
-
 </script>
+
 
 
 </body>
 
 </html>
-

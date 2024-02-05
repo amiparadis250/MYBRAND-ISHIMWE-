@@ -193,14 +193,14 @@
             var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
             existingBlogs.splice(index, 1);
             localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-            location.reload(); // Refresh the page to reflect the changes
+            location.reload(); 
         }
 
         function unpublishBlog(index) {
             var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-            existingBlogs[index].published = false; // Add a 'published' property to your blog object
+            existingBlogs[index].published = false; 
             localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-            location.reload(); // Refresh the page to reflect the changes
+            location.reload(); 
         }
 
         window.onload = function () {
