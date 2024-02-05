@@ -65,10 +65,9 @@
 
                 <div class="form">
                     <div class="header">
-                        <div class="left">Login</div>
-                        <div class="right">Register</div>
+                        <div>Register</div>
                     </div>
-                    <form id="registrationForm" action="" method="post" onsubmit="return validateForm()">
+                    <form id="registrationForm" action="ADMIN PANEL/Statics.html" method="post" onsubmit="return validateForm()">
                         <p><span>Name:</span><br>
                             <input type="text" id="name" name="name">
                             <span id="nameError" class="error-message"></span>
@@ -169,6 +168,14 @@
                 document.getElementById('nameError').innerHTML = 'Name must be greater than 10 characters';
                 nameInput.classList.add('error-input');
                 return false;
+            } else if (/^\s/.test(name)) {
+                document.getElementById('nameError').innerHTML = 'Name must not start with whitespace';
+                nameInput.classList.add('error-input');
+                return false;
+            } else if (/[^a-zA-Z\s]/.test(name)) {
+                document.getElementById('nameError').innerHTML = 'Name must contain only letters and spaces';
+                nameInput.classList.add('error-input');
+                return false;
             }
 
             // Validate Email
@@ -209,11 +216,21 @@
         }
 
         function validateEmail(email) {
-            // Simple email validation, you can use a more complex regular expression if needed
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
+            // Improved email validation
+            const emailRegex = /^[^\s]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                return false;
+            }
+
+            // Additional checks for no whitespace at the start and no special characters
+            if (/^\s/.test(email) || /[^a-zA-Z0-9@\.\-_]/.test(email)) {
+                return false;
+            }
+
+            return true;
         }
-   </script>
+    </script>
 </body>
 
 

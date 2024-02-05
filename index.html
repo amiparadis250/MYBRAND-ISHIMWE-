@@ -9,6 +9,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="shortcut icon" href="images/About me.png" type="image/x-icon">
     <title> About me</title>
     <meta name="description" content="This is ISHIMWE Ami Portfolio">
     <link rel="stylesheet" href="ishimwe.css">
@@ -122,42 +123,46 @@ flex: 1 1 300px;
 
 <body>
     <div class="Container">
-        <!-- Navigation starts here -->
-        <div class="navigation">
+        <h1>Navigation Menu</h1>
+        <div class="Container">
+          <!-- Navigation starts here -->
+          <div class="navigation">
             <div class="logo">About<span id="logo_color">Me</span></div>
             <div class="navigation-menu" id="myTopnav">
-                <ul>
-                    <li><a id="active" href="#landingpage">HOME</a></li>
-                    <li><a href="#aboutme">ABOUT</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#myportfolio">PORTFOLIO</a></li>
-                    <li><a href="ADMIN PANEL/editblog.html">DASHBOARD</a></li>
-                    <li><a href="#blogs">BLOG</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
-                    <li><a href="ADMIN PANEL/index.html">Register</a></li>
-                </ul>
+              <ul>
+                <li><a id="active" href="#landingpage">HOME</a></li>
+                <li><a href="#aboutme">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#myportfolio">PORTFOLIO</a></li>
+                <li><a href="ADMIN PANEL/editblog.html">DASHBOARD</a></li>
+                <li><a href="#blogs">BLOG</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="ADMIN PANEL/index.html">Register</a></li>
+              </ul>
             </div>
             <div class="menuicon ham-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-        </div>
-        <!-- navigation ended here -->
-        <!-- landing page starts here -->
-        <div class="landpagecontainer" class="parallax">
+          </div>
+          <!-- navigation ended here -->
+          <!-- landing page starts here -->
+          <div class="landpagecontainer" class="parallax">
             <div class="introduction1">
-                <h4>Hello, Welcome</h4>
-                <p id="myName">I’m ISHIMWE Ami Paradis</p>
-                <p>Do not hesitate to give me a job,<br>
-                    I will design website that exceeds your expectations,</p>
-                <button><a href="button">Contact me</a></button>
-                
+              <h4>Hello, Welcome</h4>
+              <p id="myName">I’m ISHIMWE Ami Paradis</p>
+              <p>Do not hesitate to give me a job,<br>
+                I will design website that exceeds your expectations,</p>
+              <button><a href="button">Contact me</a></button>
+        
             </div>
             <div class="Myphoto">
-                <img src="images/ami_paradis_1705007003010-removebg-preview.png" alt="">
+              <img src="images/ami_paradis_1705007003010-removebg-preview.png" alt="">
             </div>
+          </div>
         </div>
+        
         <!-- Ending of landing page -->
         <!-- starting of about me page -->
         <div class="aboutme">
@@ -692,38 +697,38 @@ flex: 1 1 300px;
     }
 </script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var menuIcon = document.querySelector('.menuicon');
-    var navMenu = document.querySelector('.navigation-menu');
-    var navLinks = document.querySelectorAll('.navigation-menu a');
+document.addEventListener('DOMContentLoaded', function () {
+  var menuIcon = document.querySelector('.menuicon');
+  var navMenu = document.querySelector('.navigation-menu');
+  var navLinks = document.querySelectorAll('.navigation-menu a');
 
-    function scrollToSection(target) {
-        var targetElement = document.getElementById(target);
+  function scrollToSection(target) {
+    var targetElement = document.getElementById(target);
 
-        if (targetElement) {
-            var offsetTop = targetElement.offsetTop;
+    if (targetElement) {
+      var offsetTop = targetElement.offsetTop;
 
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
-        }
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
     }
+  }
 
-    menuIcon.addEventListener('click', function () {
-        navMenu.classList.toggle('active');
+  menuIcon.addEventListener('click', function () {
+    navMenu.classList.toggle('active');
+  });
+
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      var targetSection = link.getAttribute('href').substring(1);
+      scrollToSection(targetSection);
+
+      navMenu.classList.remove('active');
     });
-
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            var targetSection = link.getAttribute('href').substring(1);
-            scrollToSection(targetSection);
-
-            navMenu.classList.remove('active');
-        });
-    });
+  });
 });
 
 </script>
