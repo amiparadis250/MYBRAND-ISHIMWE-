@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome/Admin Panel</title>
     <link rel="stylesheet" href="/richtexteditor/rte_theme_default.css" />
-    <script type="text/javascript" src="/richtexteditor/rte.js"></script>
-    <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,6 +13,11 @@
     <style>
         .create {
             margin-left: -10px;
+        }
+
+        small {
+            color: red;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -28,129 +31,223 @@
             </div>
         </div>
         <div class="mainContents">
-            <div class="Sidebar" style="height: 600; ">
-                <a href="users.html">
+            <div class="Sidebar" style="height: 600;">
+               
+                    <a href="users.html"> <div class="sections">
+                      <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
+                    </div></a>
+                   <a href="index.html"> <div class="sections">
+                    <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
+                    </p>
+                </div></a>
+                   <a href="message.html">
                     <div class="sections">
-                        <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span style="margin-left: -2px;">Manage Users</span>
-                    </div>
-                </a>
-                <a href="index.html">
+                      <p> <i  style="position: relative;left: -20px;" class="fa-solid fa-envelope"></i><span id="message">Messages</span></p>
+                  </div>
+                   </a>
+                   <a href="notification.html"> <div class="sections">
+                    <p><i class="fa-solid fa-bell"  style="position: relative;left: -5px;font-size: 40px;"></i><span id="notification">Notifications</span></p>
+                </div></a>
+                   <a href="Statics.html">
                     <div class="sections">
-                        <p> <i class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span style="margin-left: px;">Manage Blogs</span>
-                        </p>
-                    </div>
-                </a>
-                <a href="message.html">
-                    <div class="sections">
-                        <p> <i style="position: relative;left: -20px;" class="fa-solid fa-envelope"></i><span
-                                id="message">Messages</span></p>
-                    </div>
-                </a>
-                <a href="notification.html">
-                    <div class="sections">
-                        <p><i class="fa-solid fa-bell"
-                                style="position: relative;left: -5px;font-size: 40px;"></i><span
-                                id="notification">Notifications</span></p>
-                    </div>
-                </a>
-                <a href="Statics.html">
-                    <div class="sections">
-                        <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span
-                                id="statics">Statistics</span></p>
-                    </div>
-                </a>
-                <a href=".../homepage.htmml">
-                    <div class="sections">
-                        <p> <i style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket"></i><span
-                                id="logout">Logout</span></p>
-                    </div>
-                </a>
-            </div>
+                      <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
+                  </div>
+                   </a>
+                    <a href=".../homepage.htmml"> <div class="sections">
+                      <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
+                  </div></a>
+                   
+                </div>
+            
 
             <div class="rightside">
-                <div class="usersblog">
-
-                </div>
-                <!-- HTML code for rich text editor -->
+                <div class="usersblog"></div>
 
                 <div class="create">
                     <h2>Create Blog</h2>
                     <form id="blogForm">
                         <h4>Title</h4>
                         <input type="text" id="blog-title" required />
+                        <small id="titleError"></small>
+
                         <h4 style="margin-top: -20px;">Image</h4>
-                        <div class="before"><input type="file" id="fileInput" accept="image">
-                        <h4 style="margin-top: -10px;">Description</h4></div>
-                        
-                        <div class="selected-file" id="selectedFile"></div> <input type="text"  id="description">
+                        <div class="before">
+                            <input type="file" id="fileInput" accept="image">
+                            <small id="imageError"></small>
+                        </div>
+
+                        <h4 style="margin-top: -10px;">Description</h4>
+                        <div class="selected-file" id="selectedFile"></div>
+                        <input type="text" id="description">
+                        <small id="descError"></small>
+
                         <div class="texxeditor" style="width: 80%;">
                             <textarea id="richtext" required></textarea>
+                            <small id="textError"></small>
                         </div>
-                        <button type="button" id="saveblog" style="width: 80%; height: 30px; margin-top: 10px; background-color: yellow; border: none;"><span>Create Blog</span></button>
+
+                        <button type="button" id="saveblog" style="width: 80%; height: 30px; margin-top: 10px; background-color: yellow; border: none;">
+                            <span>Create Blog</span>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
+   
     <script src="JS/texteditor.js"></script>
-   <!-- Script for addBlog.html -->
-<script type="text/javascript" src="/richtexteditor/rte.js"></script>
-<script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
-<script src="JS/texteditor.js"></script>
-<script>
-    window.addEventListener("load", function() {
-        const saveBlogButton = document.getElementById("saveblog");
-        const blogTitle = document.getElementById("blog-title");
-        const fileInput = document.getElementById("fileInput");
-        const description = document.getElementById("description");
-        const richText = document.getElementById("richtext");
+    <!-- Script for addBlog.html -->
+    <script type="text/javascript" src="/richtexteditor/rte.js"></script>
+    <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
+    <script src="JS/texteditor.js"></script>
+    <!-- ... (Previous HTML code) ... -->
 
-        saveBlogButton.addEventListener("click", function() {
-            console.log("Clicked Save Blog");
+    <script>
+        window.addEventListener("load", function() {
+    const saveBlogButton = document.getElementById("saveblog");
+    const blogTitle = document.getElementById("blog-title");
+    const fileInput = document.getElementById("fileInput");
+    const description = document.getElementById("description");
+    const richText = document.getElementById("richtext");
 
-            var title = blogTitle.value;
-            var image = fileInput.files[0];
-            var desc = description.value;
-            var text = richText.value;
+    const titleError = document.getElementById("titleError");
+    const imageError = document.getElementById("imageError");
+    const descError = document.getElementById("descError");
+    const textError = document.getElementById("textError");
 
-            console.log("Title:", title);
-            console.log("Image:", image);
-            console.log("Description:", desc);
-            console.log("Text:", text);
+    // Function to validate title
+    function validateTitle() {
+        titleError.textContent = "";
+        blogTitle.style.border = "";
 
-            if (title && image && desc && text) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    var imageSrc = e.target.result;
+        var title = blogTitle.value.trim();
 
-                    var blog = {
-                        title: title,
-                        image: imageSrc,
-                        desc: desc,
-                        text: text
+        // Validate title format (no leading whitespace, no special characters)
+        if (!/^\S/.test(title) || /[^a-zA-Z0-9\s]/.test(title)) {
+            titleError.textContent = "Invalid title format.";
+            blogTitle.style.border = "1px solid red";
+        }
+
+        // Additional validation for title length (not exceeding 25 characters)
+        if (title.length > 50) {
+            titleError.textContent = "Title must not exceed 25 characters.";
+            blogTitle.style.border = "1px solid red";
+        }
+    }
+
+    // Function to validate image
+    function validateImage() {
+        imageError.textContent = "";
+        fileInput.style.border = "";
+
+        var image = fileInput.files[0];
+
+        if (!image) {
+            imageError.textContent = "Please select an image.";
+            fileInput.style.border = "1px solid red";
+        }
+    }
+
+    // Function to validate description
+    function validateDescription() {
+        descError.textContent = "";
+        description.style.border = "";
+
+        var desc = description.value.trim();
+
+        // Validate description length (between 23 and 160 characters)
+        if (desc.length < 23) {
+            descError.textContent = "Description must be between 23 and 160 characters.";
+            description.style.border = "1px solid red";
+        }
+    }
+
+    // Function to validate text
+    function validateText() {
+        textError.textContent = "";
+        richText.style.border = "";
+
+        var text = richText.value.trim();
+
+        // Validate text length (at least 23 words)
+        var wordCount = text.split(/\s+/).length;
+        if (wordCount < 23) {
+            textError.textContent = "Text must contain at least 23 words.";
+            richText.style.border = "1px solid red";
+        }
+    }
+
+    // Event listeners for real-time validation
+    blogTitle.addEventListener("input", validateTitle);
+    fileInput.addEventListener("change", validateImage);
+    description.addEventListener("input", validateDescription);
+    richText.addEventListener("input", validateText);
+
+    saveBlogButton.addEventListener("click", function() {
+     
+
+        validateTitle();
+        validateImage();
+        validateDescription();
+        validateText();
+
+                // Additional validation logic can be added here
+                // ...
+    
+                var title = blogTitle.value.trim();
+                var image = fileInput.files[0];
+                var desc = description.value.trim();
+                var text = richText.value.trim();
+    
+                if (title && image && desc && text) {
+                    // Continue with the save operation
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var imageSrc = e.target.result;
+    
+                        var blog = {
+                            title: title,
+                            image: imageSrc,
+                            desc: desc,
+                            text: text
+                        };
+    
+                        saveBlogToLocalStorage(blog);
+                        alert("Blog saved successfully!");
+    
+                        // Clear the form and errors
+                        clearForm();
                     };
-
-                    saveBlogToLocalStorage(blog);
-                    alert("Blog saved successfully!");
-                };
-
-                reader.readAsDataURL(image);
-            } else {
-                alert("Please fill all the fields!");
+    
+                    reader.readAsDataURL(image);
+                }
+            });
+    
+            function saveBlogToLocalStorage(blog) {
+                var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+                existingBlogs.push(blog);
+                localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+            }
+    
+            function clearForm() {
+                blogTitle.value = "";
+                fileInput.value = "";
+                description.value = "";
+                richText.value = "";
+    
+                // Clear error messages and borders
+                titleError.textContent = "";
+                imageError.textContent = "";
+                descError.textContent = "";
+                textError.textContent = "";
             }
         });
+    </script>
+   
 
-        function saveBlogToLocalStorage(blog) {
-            var existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
-            existingBlogs.push(blog);
-            localStorage.setItem("blogs", JSON.stringify(existingBlogs));
-        }
-    });
-</script>
 </body>
 </html>
 <script>
 	var editor1 = new RichTextEditor("richtext");
-	//editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+	
 </script>
