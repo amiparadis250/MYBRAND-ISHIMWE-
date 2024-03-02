@@ -65,26 +65,24 @@
 
                 <div class="form">
                     <div class="header">
-                        <div>Register</div>
+                        <div>Login</div>
+                       
                     </div>
-                    <div id="serverError" style="color:red;padding:5px 20px"></div>
-                    <div id="serverError" style="color:red;padding:5px 20px"></div>
-        <form id="registrationForm" method="post">
-            <p>
-                <input type="text" id="name" name="name" placeholder="Name">
-                <span id="nameError" class="error-message"></span>
-            </p>
-            <p>
-                <input type="text" id="email" name="email" placeholder="Email">
-                <span id="emailError" class="error-message"></span>
-            </p>
-            <p>
-                <input type="password" id="password" name="password" placeholder="Password">
-                <span id="passwordError" class="error-message"></span>
-            </p>
-            <p>
-                <button style="background-color: #D4A81E; padding: 10px; border: none; color: white; cursor: pointer;width: 300px; margin-bottom: 10px;" type="submit" id="registerButton">Register</button>
-            </p>
+                    <div id="serverError" style="color:red;padding: 4px 30px;"></div>
+<form id="registrationForm" action="../ADMIN PANEL/html/index.html" method="post">
+    <p><span>Email:</span><br>
+        <input type="text" id="email" name="email">
+        <span id="emailError" class="error-message"></span>
+    </p>
+    <p><span>Password:</span><br>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error-message"></span>
+    </p>
+    <p>
+        <button style="background-color: #D4A81E;" type="submit" id="loginForm">Login</button>
+    </p>
+</form>
+<span style="margin-left: 200px;"><a href="login.html">Create Account</a></span>
 
                 </div>
             </div>
@@ -137,9 +135,8 @@
 
 </div>
 
-<script src="../JavaScript/login.js">
-    // Add event listeners for real-time validation
-</script>
+<script src="../JavaScript/register.js"></script>
+
 </body>
 
 

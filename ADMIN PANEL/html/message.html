@@ -32,7 +32,7 @@
             <a href="../html/users.html"> <div class="sections">
               <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
             </div></a>
-           <a href="../html/index.html"> <div class="sections">
+           <a href="../html/editblog.html"> <div class="sections">
             <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
             </p>
         </div></a>
@@ -49,7 +49,7 @@
               <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
           </div>
            </a>
-            <a href="../../homepage.html"> <div class="sections">
+            <a href="../../index.html"> <div class="sections">
               <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
           </div></a>
            
@@ -69,28 +69,14 @@
         <div class="editblog">
             <div class="editTitle"><h3>Messages</h3></div>
             <div class="table">
-                <table>
-                    <tr><th>Number</th>
+                <table id="table">
+                    <tr>
+                        <th>Number</th>
                         <th>Names</th>
                         <th>Email</th>
                         <th>Message</th>
                         <th>Reply</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Lukas Mulinga</td>
-                        <td>mulinga@gmail.com</td>
-                        <td>I am in need of good website, please reachout to me , I would love to hear from you</td>
-                        <td><i style="color:#EAB308;font-size: 20px;" class="fa-solid fa-reply"></i></td>
-                      
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Lukas Mulinga Nyamachoma</td>
-                        <td>mulinga@gmail.com</td>
-                        <td>I am in need of good website, please reachout to me , I would love to hear from you, please </td>
-                        <td><i id="reply" style="color:#EAB308;font-size: 20px;" class="fa-solid fa-reply"></i></td>
-                      
+                        <th>Action</th>
                     </tr>
                     
                     
@@ -106,6 +92,7 @@
     </div>
 </div>
 </div>
-    
+    <script src="../javascript/messages.js"></script>
+    <script src="../javascript/logout.js"></script>
 </body>
 </html>

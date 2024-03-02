@@ -9,10 +9,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="shortcut icon" href="../images/About me.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/About me.png" type="image/x-icon">
     <title> About me</title>
     <meta name="description" content="This is ISHIMWE Ami Portfolio">
-    <link rel="stylesheet" href="../css/ishimwe.css">
+    <link rel="stylesheet" href="css/ishimwe.css">
     <style>
         .error-message {
             color: red;
@@ -127,7 +127,7 @@ flex: 1 1 300px;
 
 <body>
     <div class="Container">
-        <h1>Navigation Menu</h1>
+        <!-- <h1>Navigation Menu</h1> -->
         <div class="Container">
           <!-- Navigation starts here -->
           <div class="navigation">
@@ -138,10 +138,9 @@ flex: 1 1 300px;
                 <li><a href="#aboutme">ABOUT</a></li>
                 <li><a href="#skills">SKILLS</a></li>
                 <li><a href="#myportfolio">PORTFOLIO</a></li>
-                <li><a href="ADMIN PANEL/editblog.html">DASHBOARD</a></li>
                 <li><a href="#blogs">BLOG</a></li>
                 <li><a href="#contact">CONTACT</a></li>
-                <li><a href="ADMIN PANEL/index.html">Register</a></li>
+                <li><a href="html/register.html">Login</a></li>
               </ul>
             </div>
             <div class="menuicon ham-menu">
@@ -162,7 +161,7 @@ flex: 1 1 300px;
         
             </div>
             <div class="Myphoto">
-              <img src="../images/ami_paradis_1705007003010-removebg-preview.png" alt="">
+              <img src="images/ami_paradis_1705007003010-removebg-preview.png" alt="">
             </div>
           </div>
         </div>
@@ -172,7 +171,7 @@ flex: 1 1 300px;
         <div class="aboutme">
             <div class="aboutmecontainer" id="aboutme">
                 <div class="imageSection" id="pdf">
-                    <img src="../images/About me.png" alt="" style="margin-left: -10px;">
+                    <img src="images/About me.png" alt="" style="margin-left: -10px;">
                 </div>
                 <div class="Aboutmesection">
                     <h5 id="ty" style="color: white;font-size: 43px;">About<span> Me</span></h5>
@@ -184,7 +183,7 @@ flex: 1 1 300px;
                         Let's collaborate to shape impactful and cutting-edge digital experiences
                     </p>
                     <button>
-                        <a href="../images/Paradis's CV.pdf" download="Paradis_CV.pdf" style="text-decoration: none;">Download my resume</a>
+                        <a href="images/Paradis's CV.pdf" download="Paradis_CV.pdf" style="text-decoration: none;">Download my resume</a>
                       </button>
                       
                 </div>
@@ -281,7 +280,7 @@ flex: 1 1 300px;
 
                         <div class="project2">
                             <div class="image">
-                            <img src="../images/p-img4.png" alt="">
+                            <img src="images/p-img4.png" alt="">
                             </div>
                             <div class="description2">
                                 <div class="name">Lost and found handler</div>
@@ -297,7 +296,7 @@ flex: 1 1 300px;
 
                         <div class="project2">
                             <div class="image">
-                            <img src="../images/p-img3.png" alt="">
+                            <img src="images/p-img3.png" alt="">
                             </div>
                             <div class="description2">
                                 <div class="name">Kigali saving app</div>
@@ -314,7 +313,7 @@ flex: 1 1 300px;
 
                         <div class="project2">
                             <div class="image">
-                            <img src="../images/p-img3.png" alt="">
+                            <img src="images/p-img3.png" alt="">
                         </div>
                             <div class="description2">
                                 <div class="name">Worshiping climate</div>
@@ -331,7 +330,7 @@ flex: 1 1 300px;
 
                         <div class="project2">
                             <div class="image">
-                            <img src="../images/p-img1.png" alt="">
+                            <img src="images/p-img1.png" alt="">
                             </div>
                             <div class="description2">
                                 <div class="name">House renting site</div>
@@ -408,11 +407,13 @@ flex: 1 1 300px;
                         <p><span>Website _</span> www.abc.aboutme.com</p>
                     </div>
                     <div class="contact" id="contact">
-    <form onsubmit="return validateForm()">
+    <form id="myForm">
         <input id="name" type="text" placeholder="Name"><br>
         <span id="nameError" class="error-message"></span>
-        <textarea id="comment" rows="5" cols="40" placeholder="Enter your message"></textarea><br>
-        <button type="submit">Contact Us</button>
+        <input id="email" type="text" placeholder="email"><br>
+        <span id="emailError" class="email"></span>
+        <textarea id="message" rows="5" cols="40" placeholder="Enter your message"></textarea><br>
+        <button type="submit" id="sendButton">Contact Us</button>
     </form>
 
                     </div>
@@ -467,7 +468,10 @@ flex: 1 1 300px;
 <!-- Ending of Footer -->
    
 </div>
-<script src="../JavaScript/index.js"></script>
+<script src="JavaScript/messages.js"></script>
+<script src="/JavaScript/script.js"></script>
+
+<script src="JavaScript/index.js"></script>
     
 
 

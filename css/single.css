@@ -91,8 +91,9 @@ body {
 .newsbody img {
     margin-top: 15px;
     padding-left: 27px;
-    height: auto;
-    max-width: 80%;
+    width: 80%;
+    height:40%;
+    text-align: center;
 }
 
 .newstitle p:first-child {
@@ -154,7 +155,7 @@ body {
 .contact input,
 .contact textarea,
 .contact button {
-    width: 50%;
+    width: 40%;
     margin-bottom: 10px;
     padding: 10px;
 }
@@ -231,4 +232,41 @@ body {
         font-size: 26pxpx;
     }
 
+}
+/* Add these styles to your existing stylesheet */
+
+.submittedComment {
+    margin-top: 20px;
+    text-align: center; 
+}
+
+.comment {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: inline-block; 
+    width: 50%; 
+    box-sizing: border-box;
+    height: auto;
+}
+.commenter {
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .commentDate {
+        font-size: 12px;
+        color: #888;
+    }
+
+
+.commentText {
+    margin-top: 8px;
+    float: left;
+    
+}
+.commentDate {
+    font-size: 12px;
+    color: #EAB308;
 }

@@ -21,7 +21,7 @@
         <div class="logo">About<span>Me</span></div>
         <div class="user">
             <span>Welcome back Ami Paradis</span>
-            <img src="Assets/User.svg" alt="" >
+            <img src="../Assets/users-svgrepo-com 1.svg" alt="" >
         </div>
     </div>
     <div class="mainContents">
@@ -29,7 +29,7 @@
             <a href="../html/users.html"> <div class="sections">
               <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
             </div></a>
-           <a href="../html/index.html"> <div class="sections">
+           <a href="../html/editblog.html"> <div class="sections">
             <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
             </p>
         </div></a>
@@ -46,7 +46,7 @@
               <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
           </div>
            </a>
-            <a href="../../homepage.html"> <div class="sections">
+            <a href="../../index.html"> <div class="sections">
               <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
           </div></a>
            
@@ -58,30 +58,30 @@
     <div class="rightside">
         div class="rightside">
         <div class="usersblog">
-            <a href="adduser.html"><div class="editusers">
+            <!-- <a href="adduser.html"><div class="editusers">
                 <svg id="add" xmlns="http://www.w3.org/2000/svg" width="60" height="57" viewBox="0 0 97 84"
                     fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M48.4146 76.8375C70.4977 76.8375 88.3999 61.3549 88.3999 42.2564C88.3999 23.1578 70.4977 7.67533 48.4146 7.67533C26.3314 7.67533 8.42937 23.1578 8.42937 42.2564C8.42937 61.3549 26.3314 76.8375 48.4146 76.8375ZM51.4135 31.8821C51.4135 30.4497 50.0708 29.2885 48.4146 29.2885C46.7584 29.2885 45.4157 30.4497 45.4157 31.8821V39.6628H36.4191C34.7628 39.6628 33.4202 40.8241 33.4202 42.2564C33.4202 43.6888 34.7628 44.85 36.4191 44.85H45.4157V52.6308C45.4157 54.0631 46.7584 55.2243 48.4146 55.2243C50.0708 55.2243 51.4135 54.0631 51.4135 52.6308V44.85H60.4102C62.0664 44.85 63.4091 43.6888 63.4091 42.2564C63.4091 40.8241 62.0664 39.6628 60.4102 39.6628H51.4135V31.8821Z"
                         fill="#1C274C" />
                 </svg> <span id="we">Add users</span>
-            </div></a>
+            </div></a> -->
             
         </div>
         <div class="editblog">
             <div class="editTitle">
                 <h3>Manage Users</h3>
             </div>
-            <div class="table">
+            <div class="table" id="table">
                 <table id="userTable">
                     <tr>
                         <th>Number</th>
                         <th>Names</th>
-                        <th>Username</th>
+                        <th>Email</th>
                         <th>Role</th>
-                        <th>Action</th>
+                        <th>Actions</th>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td>1</td>
                         <td>MUCYO Alistde</td>
                         <td>alistde@gmail.com</td>
@@ -90,27 +90,9 @@
                             <button onclick="editRow(1)">Edit</button>
                             <button onclick="deleteRow(1)">Delete</button>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>MUCYO Alistde RWEMA</td>
-                        <td>alistde@gmail.com</td>
-                        <td>Author</td>
-                        <td>
-                            <button onclick="editRow(2)">Edit</button>
-                            <button onclick="deleteRow(2)">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>MUCYO Alistde</td>
-                        <td>alistde@gmail.com</td>
-                        <td>Author</td>
-                        <td>
-                            <button onclick="editRow(3)">Edit</button>
-                            <button onclick="deleteRow(3)">Delete</button>
-                        </td>
-                    </tr>
+                    </tr> -->
+                  
+                  
                 </table>
             </div>
             <div class="pagination">
@@ -122,106 +104,7 @@
     </div>
 </div>
 </div>
-
-<script>
-function editRow(rowNumber) {
-    var table = document.getElementById("userTable");
-    var row = table.rows[rowNumber];
-    var cells = row.getElementsByTagName("td");
-
-    for (var i = 1; i < cells.length - 1; i++) {
-        var input = document.createElement("input");
-        input.type = "text";
-        input.value = cells[i].innerText;
-        input.classList.add("editable");
-        cells[i].innerText = '';
-        cells[i].appendChild(input);
-    }
-
-    var saveButton = document.createElement("button");
-    saveButton.innerText = "Save";
-    saveButton.onclick = function () {
-        saveRow(rowNumber);
-    };
-
-    var cancelButton = document.createElement("button");
-    cancelButton.innerText = "Cancel";
-    cancelButton.onclick = function () {
-        cancelEdit(rowNumber);
-    };
-
-    cells[cells.length - 1].innerHTML = '';
-    cells[cells.length - 1].appendChild(saveButton);
-    cells[cells.length - 1].appendChild(cancelButton);
-}
-
-function saveRow(rowNumber) {
-    var table = document.getElementById("userTable");
-    var row = table.rows[rowNumber];
-    var cells = row.getElementsByTagName("td");
-
-    for (var i = 1; i < cells.length - 1; i++) {
-        var input = cells[i].getElementsByTagName("input")[0];
-        cells[i].innerText = input.value;
-    }
-
-    var editButton = document.createElement("button");
-    editButton.innerText = "Edit";
-    editButton.onclick = function () {
-        editRow(rowNumber);
-    };
-
-    var deleteButton = document.createElement("button");
-    deleteButton.innerText = "Delete";
-    deleteButton.onclick = function () {
-        deleteRow(rowNumber);
-    };
-
-    cells[cells.length - 1].innerHTML = '';
-    cells[cells.length - 1].appendChild(editButton);
-    cells[cells.length - 1].appendChild(deleteButton);
-}
-
-function cancelEdit(rowNumber) {
-    var table = document.getElementById("userTable");
-    var row = table.rows[rowNumber];
-    var cells = row.getElementsByTagName("td");
-
-    for (var i = 1; i < cells.length - 1; i++) {
-        var input = cells[i].getElementsByTagName("input")[0];
-        cells[i].innerText = input.value;
-    }
-
-    var editButton = document.createElement("button");
-    editButton.innerText = "Edit";
-    editButton.onclick = function () {
-        editRow(rowNumber);
-    };
-
-    var deleteButton = document.createElement("button");
-    deleteButton.innerText = "Delete";
-    deleteButton.onclick = function () {
-        deleteRow(rowNumber);
-    };
-
-    cells[cells.length - 1].innerHTML = '';
-    cells[cells.length - 1].appendChild(editButton);
-    cells[cells.length - 1].appendChild(deleteButton);
-}
-
-function deleteRow(rowNumber) {
-    var table = document.getElementById("userTable");
-    var row = table.rows[rowNumber];
-    row.parentNode.removeChild(row);
-}
-
-function prevPage() {
-    // Implement
-}
-
-function nextPage() {
-    
-}
-</script>
+<script src="../javascript/users.js"></script>
+<script src="../javascript/logout.js"></script>
 </body>
 </html>
