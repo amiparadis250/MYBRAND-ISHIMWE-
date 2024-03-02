@@ -24,7 +24,7 @@
         <div class="logo">About<span>Me</span></div>
         <div class="user">
             <span>Welcome back Ami Paradis</span>
-            <img src="Assets/User.svg" alt="" >
+            <img src="../Assets/User.svg" alt="" >
         </div>
     </div>
     <div class="mainContents">
@@ -32,7 +32,7 @@
             <a href="../html/users.html"> <div class="sections">
               <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
             </div></a>
-           <a href="../html/index.html"> <div class="sections">
+           <a href="../html/editblog.html"> <div class="sections">
             <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
             </p>
         </div></a>
@@ -49,7 +49,7 @@
               <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
           </div>
            </a>
-            <a href="../../homepage.html"> <div class="sections">
+            <a href="../../index.html"> <div class="sections">
               <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
           </div></a>
            
@@ -59,32 +59,16 @@
         
         <div class="editblog">
             <div class="editTitle"><h3>Notifications</h3></div>
-            <div class="table">
-                <table>
-                    <tr><th>1</th>
+            <div class="table" >
+                <table id="table">
+                    <tr><th></th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>comments</th>
                         <th>Blog_Title</th>
+                           <th>Action</th>
                     </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Lukas Mulinga</td>
-                        <td>mulinga@gmail.com</td>
-                        <td>This is oone the life changing blog I have ever read, puts your hands together and Clap fror Ami Paradis</td>
-                        <td>Write Once run every Where, Java is mysterie</td>
-                        
-                      
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Lukas Mulinga</td>
-                        <td>mulinga@gmail.com</td>
-                        <td>This is one the life changing blog I have ever read, puts your hands together and Clap fror Ami Paradis</td>
-                        <td>Write Once run every Where, Java is mysterie</td>
-                        
-                      
-                    </tr>
+                    
                    
                 </table>
             </div>
@@ -98,6 +82,7 @@
     </div>
 </div>
 </div>
-    
+   <script src="../javascript/notification.js"></script> 
+   <script src="../javascript/logout.js"></script>
 </body>
 </html>

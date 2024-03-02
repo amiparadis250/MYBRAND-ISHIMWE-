@@ -79,3 +79,30 @@ button:hover {
     position: relative;
     top:8px;
 }
+
+td #edit{
+   position: relative;
+    color:#EAB308;
+    left:20px;
+    font-size: 20px;
+}
+td #edit:hover{
+    color:red
+}
+td #deleteIcon{
+    position: relative;
+     color:#EAB308;
+     font-size: 20px;
+ }
+ td #deleteIcon:hover{
+     color:red
+ }
+ 
+ td i #delete:hover{
+    color:red;
+ }
+ i{
+    color: #EAB308;
+    font-size: 20px;
+
+ }

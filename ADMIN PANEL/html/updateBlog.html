@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -62,7 +62,7 @@
                 <div class="usersblog"></div>
 
                 <div class="create">
-                    <h2>Create Blog</h2>
+                    <h2>Update Blog</h2>
                     <form id="blogForm">
                         <h4>Title</h4>
                         <input type="text" id="blog-title" required />
@@ -76,36 +76,36 @@
 
                         <h4 style="margin-top: -10px;">Description</h4>
                         <div class="selected-file" id="selectedFile"></div>
-                        <input type="text" id="description">
+                        <input type="text" id="description1">
                         <small id="descError"></small>
 
                         <div class="texxeditor" style="width: 80%;">
-                            <textarea id="richtext" required></textarea>
+                            <textarea   id="richtext" required></textarea>
                             <small id="textError"></small>
                         </div>
 
-                        <button type="button" id="saveblog" style="width: 80%; height: 30px; margin-top: 10px; background-color: yellow; border: none;">
-                            <span>Create Blog</span>
+                        <button type="button" id="updateBlog" style="width: 80%; height: 30px; margin-top: 10px; background-color: yellow; border: none;">
+                            <span>Update Blog</span>
                         </button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-   
     
-   
 
+    <!-- Script for addBlog.html -->
     <script type="text/javascript" src="/richtexteditor/rte.js"></script>
     <script type="text/javascript" src='/richtexteditor/plugins/all_plugins.js'></script>
-    <script src="JS/texteditor.js"></script>
+    <!-- <script src="JS/texteditor.js"></script> -->
+    <!-- ... (Previous HTML code) ... -->
 
-
-    <script src="../javascript/index.js"></script>
-
+    <script src="../javascript/updateBlog.js"></script>
     <script src="../javascript/logout.js"></script>
-    <script src="../javascript/index.js"></script>
+    
 
+  
+       
 </body>
 </html>
 <script>

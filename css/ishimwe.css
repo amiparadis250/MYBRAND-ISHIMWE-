@@ -731,7 +731,7 @@ body {
 
 .contactcontainer .contact input {
     width: 300px;
-    height: 50px;
+    height: 35px;
     background: #1F2937;
     margin-bottom: 10px;
     position: relative;
@@ -748,6 +748,7 @@ body {
 }
 
 .contactcontainer .contact button {
+   
     margin-top: 5px;
     display: flex;
     padding: 16px 20px;
@@ -757,6 +758,10 @@ body {
     background: #EAB308;
     outline: none;
     border: 1px solid #EAB308;
+}
+.contactcontainer .contact button:hover{
+    background: #1F2937;
+    color: #EAB308;
 }
 
 /* Ending of Contact me */
@@ -906,9 +911,7 @@ form {
     margin: 2px;
 
 }
-.userful-links a:hover{
-   
-}
+
 .contact p{
     color: #9CA3AF;
     margin: 1px;

@@ -85,9 +85,6 @@ function validateForm() {
         document.getElementById('passwordError').innerHTML = '';
         passwordInput.classList.remove('error-input');
     }
-
-    
-    window.location.href = 'ADMIN PANEL/editblog.html';
     return true;
 }
 
@@ -104,3 +101,47 @@ function validateEmail(email) {
 
     return true;
 }
+
+//fetching login APIs 
+document.addEventListener("DOMContentLoaded", () => {
+    const registerForm = document.getElementById("registrationForm");
+    const registerButton = document.getElementById("registerButton");
+    const serverError = document.getElementById("serverError");
+
+    registerForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const fullName = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        serverError.innerHTML = "";
+
+        try {
+            const result = await fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/users/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fullName: fullName,
+                    email: email,
+                    password: password
+                })
+            });
+
+            if (!result.ok) {
+                const errorResponse = await result.json();
+        
+                serverError.innerHTML = "User already exists: " + errorResponse.message;
+            } else {
+                serverError.innerHTML = "Registration successful!";
+                window.location.href = "../index.html"; 
+            }
+        } catch (error) {
+            console.error(error);
+            serverError.innerHTML = "User Already Exisist";
+        }
+    });
+});
+
