@@ -8,8 +8,8 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="index.css">
- <link rel="stylesheet" href="editblog.css">
+ <link rel="stylesheet" href="../css/index.css">
+ <link rel="stylesheet" href="../css/editblog.css">
  <style>
    .newusers{
     margin-left: -40px;
@@ -75,33 +75,32 @@
     </div>
     <div class="mainContents">
         <div class="Sidebar">
-            <a href="users.html"> <div class="sections">
+            <a href="../html/users.html"> <div class="sections">
               <p style="padding-top: 10px;"> <i class="fa-solid fa-user"></i><span  style="margin-left: -2px;">Manage Users</span>
             </div></a>
-           <a href="index.html"> <div class="sections">
+           <a href="../html/index.html"> <div class="sections">
             <p> <i  class="fa-solid fa-newspaper" style="margin-left: -4px;"></i><span  style="margin-left: px;">Manage Blogs</span>
             </p>
         </div></a>
-           <a href="message.html">
+           <a href="../html/message.html">
             <div class="sections">
               <p> <i  style="position: relative;left: -20px;" class="fa-solid fa-envelope"></i><span id="message">Messages</span></p>
           </div>
            </a>
-           <a href="notification.html"> <div class="sections">
+           <a href="../html/notification.html"> <div class="sections">
             <p><i class="fa-solid fa-bell"  style="position: relative;left: -5px;font-size: 40px;"></i><span id="notification">Notifications</span></p>
         </div></a>
-           <a href="Statics.html">
+           <a href="../html/Statics.html">
             <div class="sections">
               <p> <i class="fa-solid fa-chart-simple" style="position: relative;left: -22px;"></i><span id="statics">Statistics</span></p>
           </div>
            </a>
-            <a href=".../homepage.htmml"> <div class="sections">
+            <a href="../../homepage.html"> <div class="sections">
               <p> <i  style="position: relative;left: -30px;" class="fa-solid fa-right-from-bracket" ></i><span id="logout">Logout</span></p>
           </div></a>
            
         </div>
         
-    
     <div class="rightside">
        <div class="rightside">
         <div class="usersblog">
@@ -144,63 +143,8 @@
         </div>
         </div>
     </div>
-    <script>
-        function validateForm() {
-            var name = document.getElementById('name').value;
-            var password = document.getElementById('password').value;
-            var email = document.getElementById('email').value;
-            var role = document.getElementById('role').value;
-    
-            // Reset error messages
-            document.getElementById('nameError').innerHTML = '';
-            document.getElementById('passwordError').innerHTML = '';
-            document.getElementById('emailError').innerHTML = '';
-            document.getElementById('roleError').innerHTML = '';
-    
-            // Validate Name
-            if (name === '') {
-                document.getElementById('nameError').innerHTML = '*Name is required';
-                return false;
-            } else if (/[\d]/.test(name)) {
-                document.getElementById('nameError').innerHTML = '*Name must not contain numbers';
-                return false;
-            } else if (name.length <= 10) {
-                document.getElementById('nameError').innerHTML = '*Name must be greater than 10 characters';
-                return false;
-            }
-            else if (/[^a-zA-Z0-9]/.test(name)) {
-    document.getElementById('nameError').innerHTML = '*Name must not contain special characters';
-    return false;
-}
-            // Validate Password
-            if (password === '') {
-                document.getElementById('passwordError').innerHTML = '*Password is required';
-                return false;
-            } else if (password.length < 12) {
-                document.getElementById('passwordError').innerHTML = '*Password must be at least 12 characters';
-                return false;
-            } else if (!/(?=.*[0-9])(?=.*[\W_])/.test(password)) {
-                document.getElementById('passwordError').innerHTML = '*Password must contain a number and a special character';
-                return false;
-            }
-    
-            // Validate Email
-            if (email === '') {
-                document.getElementById('emailError').innerHTML = '*Email is required';
-                return false;
-            } else if (email.length < 4) {
-                document.getElementById('emailError').innerHTML = '*Email must be at least 4 characters';
-                return false;
-            }
-    
-            // Validate Role
-            if (role === '') {
-                document.getElementById('roleError').innerHTML = '*Role is required';
-                return false;
-            }
-    
-            return true;
-        }
+    <script src="../javascript/adduser.js">
+       
     </script>
 </body>
 </html>

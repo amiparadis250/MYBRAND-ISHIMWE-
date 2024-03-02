@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Blog View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="single.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <div class="logo">About<span>Me</span></div>
+            <div class="navlinks">
+                <a href="#">Programming</a>
+                <a href="#">Ecommerce</a>
+                <a href="#">Data analytics</a>
+                <a href="#">Trends</a>
+                <a href="#">Home</a>
+            </div>
+            <div class="menuicon" style="display: none;"><i class="fa-solid fa-bars"></i></div>
+        </div>
+        <div class="news">
+            <div class="newstitle">
+                <p id="blogTitle"></p>
+                <p>by Ami Paradis</p>
+                <span id="blogDate" style="color:blue; "></span>
+            </div>
+            <div class="newsbody">
+                <img id="blogImage" alt="" width="70%%" >
+                <div id="blogTextContent"></div>
+                <div class="feedback">
+                    <p>Is this article helpful 
+                        <div class="rates" >
+                        <i class="fa-solid fa-thumbs-up" id="like"><sup id="power" style="color:white;font-size: 17px;">2</sup></i>
+                        <i id="unlike" class="fa-solid fa-thumbs-down" id="unlike"><sup id="unlikeNumber" style="color: white;font-size: 20px;">1</sup></i>
+                        <i id="comment" class="fa-solid fa-comment"><sup id="power" style="color: white;font-size: 17px;">6</sup></i>
+                    </div>
+
+                    </p>
+                </div>
+                <div class="contact" id="contact">
+                    <p style="padding-bottom: 10px;font-size: 20px;">Leave Message or Comment?</p>
+                    <form>
+                        <small id="nameError"></small>
+                        <p><input id="name" type="text" placeholder="Name"><br></p>
+                        <small id="commentError"></small>
+                        <p><textarea id="comment" rows="10" cols="50" placeholder="Enter your message"></textarea><br></p>
+                        <button  id="send" type="submit" style="background-color: yellow;">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+    const fullNameInput = document.getElementById('name');
+    const commentInput = document.getElementById('comment');
+    const sendButton = document.getElementById('send');
+    const nameError = document.getElementById('nameError');
+    const commentError = document.getElementById('commentError');
+
+    fullNameInput.addEventListener('input', function () {
+        validateName();
+    });
+
+    commentInput.addEventListener('input', function () {
+        validateComment();
+    });
+
+    sendButton.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent form submission for now
+
+        if (isValid()) {
+            // Perform further actions if the form is valid
+            console.log('Form is valid');
+            // You can add additional logic to submit the form or perform other actions.
+        }
+    });
+
+    function isValid() {
+        clearErrors();
+
+        const fullName = fullNameInput.value;
+        const comment = commentInput.value;
+
+        // Validate Name
+        if (fullName.trim() === '') {
+            displayError(nameError, 'Name is required');
+            return false;
+        } else if (fullName.length < 3 || fullName.length > 13) {
+            displayError(nameError, 'Name must be between 3 and 13 characters');
+            return false;
+        } else if (/^\s/.test(fullName)) {
+            displayError(nameError, 'Name must not start with whitespace');
+            return false;
+        } else if (/[^a-zA-Z\s]/.test(fullName)) {
+            displayError(nameError, 'Name must contain only letters and spaces');
+            return false;
+        }
+
+        // Validate Comment
+        if (comment.trim() === '') {
+            displayError(commentError, 'Comment is required');
+            return false;
+        }
+
+        // If all validations pass, the form is valid
+        return true;
+    }
+
+    function validateName() {
+        clearError(nameError);
+
+        const fullName = fullNameInput.value;
+
+        // Validate Name
+        if (fullName.trim() === '') {
+            displayError(nameError, 'Name is required');
+        } else if (fullName.length < 7|| fullName.length > 30) {
+            displayError(nameError, 'Name must be between 10 and 30 characters');
+        } else if (/^\s/.test(fullName)) {
+            displayError(nameError, 'Name must not start with whitespace');
+        } else if (/[^a-zA-Z\s]/.test(fullName)) {
+            displayError(nameError, 'Name must contain only letters and spaces');
+        } else {
+            clearError(nameError);
+            fullNameInput.style.border = ''; // Remove border when valid
+        }
+    }
+
+    function validateComment() {
+        clearError(commentError);
+
+        const comment = commentInput.value;
+
+        // Validate Comment
+        if (comment.trim() === '') {
+            displayError(commentError, 'Comment is required');
+        } else {
+            clearError(commentError);
+            commentInput.style.border = ''; // Remove border when valid
+        }
+    }
+
+    function clearError(errorElement) {
+        errorElement.innerHTML = '';
+    }
+
+    function displayError(errorElement, errorMessage) {
+        errorElement.innerHTML = errorMessage;
+        errorElement.style.color = 'red';
+    }
+
+    function clearErrors() {
+        clearError(nameError);
+        clearError(commentError);
+    }
+</script>
+
+
+            
+       
+        <!-- //this is liking system and unliking -->
+        <script>
+    var like = document.getElementById('like');
+    var unlike = document.getElementById('unlike');
+    var number = document.getElementById('power');
+    var unlikeNumber = document.getElementById('unlikeNumber');
+
+    like.addEventListener('click', function() {
+        if (like.style.color !== 'blue' && unlike.style.color !== 'blue') {
+            like.style.color = 'blue';
+            unlike.style.color = '';
+            var numberOfLikes = parseInt(number.textContent);
+            number.textContent = numberOfLikes + 1;
+            unlikeNumber.textContent = numberOfDislikes - 1;
+        }
+    });
+
+    unlike.addEventListener('click', function() {
+        if (unlike.style.color !== 'blue' && like.style.color !== 'blue') {
+            like.style.color = '';
+            unlike.style.color = 'blue';
+            var numberOfDislikes = parseInt(unlikeNumber.textContent);
+            unlikeNumber.textContent = numberOfDislikes + 1;
+            number.textContent = numberOfLikes - 1;
+        }
+    });
+</script>
+
+        
+        
+
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var blogId = getQueryParam('blogId');
+                var detailedBlog = JSON.parse(localStorage.getItem("blogs"))[blogId] || {};
+                function getCurrentDateTime() {
+                var today = new Date();
+                var day = today.getDate();
+                var month = today.getMonth() + 1; 
+                var year = today.getFullYear();
+                var hours = today.getHours();
+                var minutes = today.getMinutes();
+                var formattedDate = padZero(day) + '/' + padZero(month) + '/' + year + ' ' + padZero(hours) + ':' + padZero(minutes);
+                return formattedDate;
+}
+
+
+function padZero(num) {
+    return (num < 10 ? '0' : '') + num;
+}
+                document.getElementById("blogTitle").innerText = detailedBlog.title || "";
+                document.getElementById("blogDate").innerText = getCurrentDateTime();
+                document.getElementById("blogImage").src = detailedBlog.image || "";
+                document.getElementById("blogTextContent").innerHTML = detailedBlog.text || "";
+            });
+
+            function getQueryParam(name) {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(name);
+            }
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var form = document.querySelector("form");
+                var nameInput = document.getElementById("name");
+                var commentInput = document.getElementById("comment");
+                var displayArea = document.getElementById("display-reply");
+
+                form.addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    var name = nameInput.value;
+                    var comment = commentInput.value;
+
+                    displayArea.innerHTML = "<strong>Your Message:</strong><br>Name: " + name + "<br>Comment: " + comment;
+
+                    nameInput.value = "";
+                    commentInput.value = "";
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
