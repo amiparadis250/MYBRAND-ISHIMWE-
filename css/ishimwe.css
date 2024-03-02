@@ -1,0 +1,1248 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&family=Nunito+Sans:opsz,wght@6..12,300&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+body{
+    background-color: #020617;
+}
+.ham-menu {
+  height: 30px;
+  width: 50px;
+  margin-left: auto;
+  position: relative;
+}
+.ham-menu span {
+  height: 3px;
+  width: 50%;
+  background-color: #ffffff;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+.ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.ham-menu span:nth-child(3) {
+  top: 75%;
+}
+.ham-menu.active span:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+.ham-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+.ham-menu.active span:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, 50%) rotate(-45deg);
+}
+.navigation-menu{
+    width: 20%;
+    /* z-index: 3; */
+}
+.navigation-menu.active {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    height:auto; /* Set the width to 50% */
+    color: #fff;
+    background-color: #1f2937;
+
+}
+.navigation-menu.active ul{
+    display: flex;
+    flex-direction: column;
+}
+html,
+body {
+    scroll-behavior: smooth;
+    max-width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+
+
+.Container {
+    width: min(100%);
+    
+}
+
+/* Navigation */
+.Container .navigation {
+    display: flex;
+    width: 100%;
+    background-color: #1F2937;
+    height: 10%;
+    position: fixed;
+    top: 0px;
+    z-index: 5;
+}
+
+.navigation-menu {
+    display: flex;
+    flex: 1;
+}
+
+.navigation-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-menu li {
+    display: flex;
+    margin: 20px;
+}
+
+.navigation-menu li a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: #9CA3AF;
+    font-family: "Lexend Deca";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.logo {
+    margin-left: 50px;
+    margin-top: 17px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-family: "Lexend Deca";
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+    width: 30%;
+}
+
+.logo span {
+    color: #EAB308;
+}
+
+.navigation-menu li a:hover {
+    color: #EAB308;
+}
+
+.navigation-menu li a #active {
+    color: #FFFFFF;
+}
+
+#active {
+    color: #FFFFFF;
+}
+
+.menuicon {
+    display: none;
+    color: #FFFFFF;
+    font-size: 24px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#active {
+    color: #FFFFFF;
+}
+
+/* navigations ended here */
+/* Landingpage */
+.Container>.landpagecontainer {
+    background-color: #020617;
+    width: 100%;
+    display: flex;
+    padding: 0px 5%;
+}
+
+.landpagecontainer>.introduction1 {
+    margin-top: 100px;
+    flex: 2;
+    align-self: center;
+}
+
+.landpagecontainer>.Myphoto {
+    flex: 1;
+    height: 80%;
+}
+
+.Myphoto img {
+    margin-top: 110px;
+    width: 80%;
+    height: 80%;
+}
+
+.introduction1 h4 {
+    color: #EAB308;
+    font-family: 'Lexend Deca';
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    margin-left: 18px;
+
+
+}
+
+.introduction1 #myName {
+    color: #F3F4F6;
+    font-family: Lexend Deca;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+    margin-top: 10px;
+    margin-left: 20px;
+
+}
+
+.introduction1 p {
+    color: #6B7280;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    margin-left: 19px;
+    /* width: 700px; */
+}
+
+.introduction1 button {
+    flex-wrap: nowrap;
+    display: flex;
+    padding: 10px 30px;
+    align-items: flex-start;
+    margin-top: 35px;
+    border-radius: 4px;
+    background: #FACC15;
+    margin-left: 20px;
+    border: 1px solid yellow;
+}
+
+.introduction1 button a {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+/* About me page */
+.aboutme {
+    padding: 60px;
+    height: 100%;
+    width: 100%;
+    background-color: #020617;
+    /* display: flex; */
+}
+
+.aboutmecontainer {
+    background-color: #020617;
+    width: 80%;
+    /* height: 427px; */
+    margin: 0px 0 0 10px;
+    display: flex;
+    gap: 60px;
+}
+
+.imageSection {
+
+    margin-top: 40px;
+    width: 33%;
+    /* height: 350px; */
+    /* flex-shrink: 0; */
+    border-radius: 20px;
+    border: 16px solid #EAB308;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1;
+}
+
+.imageSection img {
+    width: 300px;
+    height: 340px;
+    position: relative;
+    top: -27px;
+    opacity: 1;
+    margin-left: -100px;
+}
+
+.Aboutmesection {
+    padding-top: 50px;
+    margin-top: -18px;
+    margin-left: 50px;
+   
+}
+
+
+.Aboutmesection h5 {
+    color: #F3F4F6;
+
+    font-family: Lexend Deca;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+}
+
+.Aboutmesection h5 span {
+    color: #EAB308;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+}
+
+.Aboutmesection p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    color: #6B7280;
+}
+
+.Aboutmesection button {
+    margin-top: 20px;
+    padding: 16px 20px;
+    background-color: #EAB308;
+    border: 1px solid yellow;
+    border-radius: 4px;
+
+    /* SKILLS SECTION */
+
+}
+
+.skills_Section {
+
+    width: 100vw;
+    background-color: #020617;
+}
+
+.skills_Section .skillscontainer {
+
+    width: 80%;
+
+    margin-left: 100px;
+
+}
+
+.skillscontainer h3 {
+
+    color: white;
+
+    font-family: Lexend Deca;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 64px;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.Skillsitem {
+    margin-left: 120px;
+    margin-top: 50px;
+}
+
+.Skillsitem .words {
+    display: flex;
+    margin-bottom: 3px;
+}
+
+.Skillsitem .words .percent {
+    margin-right: 225px;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+
+
+}
+
+.Skillsitem .words .language {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300
+}
+
+.skillscontainer .progressbar {
+    width: 300px;
+    height: 8px;
+    flex-shrink: 0;
+    background-color: white;
+
+}
+
+.skillscontainer .progressbar .insideprpogress {
+    width: 100px;
+    height: 8px;
+    background-color: yellow;
+}
+
+.Skillsitem_container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+/* End of Skills  Section */
+/* Start Of MY Portfolio Section */
+.Myportfolio {
+
+    width: 100%;
+    background-color: #020617;
+
+}
+
+.portfolioContainer {
+    margin-top: 100px;
+    width: 90%;
+
+    margin-left: 80px;
+}
+
+.Myportfolio .title {
+    margin-top: 50px;
+    color: #F3F4F6;
+    text-align: center;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    margin-left: -50px;
+}
+
+.Myportfolio .title span {
+    color: #EAB308;
+    font-family: Lexend Deca;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.introduction p span {
+    opacity: 0.7;
+    color: #EAB308;
+    font-family: Lexend Deca;
+    font-size: 24px;
+    font-style: normal;
+}
+
+.introduction p {
+    margin-top: 20px;
+    color: #6B7280;
+    font-family: Lexend Deca;
+    font-size: 24px;
+    font-style: normal;
+    margin-bottom: 35px;
+}
+
+
+.project {
+
+    display: flex;
+    width: 100%;
+
+    gap: 5px;
+}
+
+.project .project1 {
+    background-color: white;
+    width: 25%;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.project2 {
+
+    height: 350px;
+    width: 30%;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.project2 .image {
+
+    height: 220px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.project2 .description2 {
+    padding: 15px;
+
+    height: 40%;
+}
+
+.project1 .image {
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.1px;
+}
+
+.project1 .description {
+    margin-left: 8px;
+    background-color: whitesmoke;
+}
+
+.project1 .description .name {
+    color: black;
+
+    font-family: "Lexend Deca";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.project1 .description p {
+    color: black;
+    font-family: Lexend Deca;
+    font-style: normal;
+
+}
+
+.description button {
+    background-color: white;
+    outline: none;
+    border: 1px solid black;
+    width: 23%;
+    background-color: #EAB308;
+    padding: 1px;
+
+}
+
+/* END OF MY PORTFOLIO */
+/* START OF MY BLOGS */
+
+/* Add styling for the slider controls */
+
+
+
+.blogs {
+    width: 100%;
+    background-color: #020617;
+   
+}
+
+.blogscontainer {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    margin-left: 80px;
+
+}
+
+.blogtitle {
+
+    margin-top: 50px;
+    height: 47px;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+
+.blogs .blogscontainer p {
+    margin-top: 20px;
+    color: var(--Paragraph-Font, #767676);
+    text-align: center;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#t {
+    margin-top: 20px;
+}
+.bloginfo {
+    margin: 10px;
+}
+
+.bloginfo .title {
+    color: black;
+    margin-top: 10px;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123.6%;
+   text-transform: capitalize;
+    margin-left: 4px;
+   
+}
+.blogicons{
+    color: #EAB308;
+    position: relative;
+    left: 150px; 
+    color: #EAB308;
+}
+.blogicons i{
+    
+    color: #EAB308;
+}
+
+
+.bloginfo span {
+    color: var(--Paragraph-Font, #767676);
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: capitalize;
+    width: 200px;
+    margin: 5px;
+}
+
+.bloginfo #t {
+    color: var(--Yellow, #FFB400);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    position: relative;
+    top: 20px;
+}
+
+
+.Eachblog_container {
+    
+    background-color: #FFFFFF;
+    /
+   
+}
+
+#t {
+    margin-top: 20px;
+}
+
+/* Starting of Contact Page */
+.contactpage {
+    width: 100%;
+    height: 100%;
+    background-color: #020617;
+}
+
+.contactHeader .title1 {
+    position: relative;
+    top: 110px;
+    color: #F3F4F6;
+    text-align: center;
+    font-family: Lexend Deca;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px
+}
+
+.contactHeader .title1 span {
+    color: #EAB308;
+}
+
+.contactHeader p {
+    margin-top: 110px;
+    color: #9CA3AF;
+    text-align: center;
+    font-family: Lexend Deca;
+    font-size: 19px;
+    font-style: normal;
+
+    margin-left: 320px;
+}
+
+.contactcontainer {
+    width: 80%;
+    height: 63%;
+    margin-left: 120px;
+    display: flex;
+}
+
+.contactcontainer .adress {
+    margin-top: 50;
+    width: 50%;
+    height: 100%;
+    padding: 60px;
+    margin-left: 20px;
+}
+
+.contactcontainer .adress span {
+    color: #EAB308;
+    font-family: Lexend Deca;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 41px;
+
+}
+
+.contactcontainer .adress p {
+    color: #F3F4F6;
+    font-family: Lexend Deca;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 41px;
+    margin-left: 20px;
+}
+
+.contactcontainer .contact {
+    margin-top: -20px;
+    padding: 20px;
+    flex: 1;
+    height: 100%;
+}
+
+.contactcontainer .contact input {
+    width: 300px;
+    height: 50px;
+    background: #1F2937;
+    margin-bottom: 10px;
+    position: relative;
+    left: -9px;
+    outline: 0px;
+    border: 1px solid #1F2937;
+}
+
+.contactcontainer .contact textarea {
+
+    height: 130px;
+    background-color: #1F2937;
+    outline: none;
+}
+
+.contactcontainer .contact button {
+    margin-top: 5px;
+    display: flex;
+    padding: 16px 20px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 4px;
+    background: #EAB308;
+    outline: none;
+    border: 1px solid #EAB308;
+}
+
+/* Ending of Contact me */
+/* Starting of Login and Signup */
+.Register {
+    height: 100%;
+    width: 100%;
+    background-color: #020617;
+    display: flex;
+}
+
+.Form_Container {
+    margin-top: 40px;
+    height: 80%;
+    width: 50%;
+
+}
+
+.header {
+
+    height: 40px;
+    width: 100%
+}
+
+/* .header .right {
+    background-color: white;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+
+} */
+
+.header {
+    width: 100%;
+    height: 40px;
+    background-color: #EAB308;
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+
+.conected {
+    margin-top: 150px;
+    width: 40%;
+    height: 60%;
+    margin-left: 100px;
+    flex: 1;
+    height: 86px;
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+
+    text-transform: capitalize;
+}
+
+.form {
+    position: relative;
+    width: 50%;
+    height: 70%;
+    margin: 50px;
+    margin-top: 40px;
+    margin-left: 140px;
+    border: 1px solid yellow;
+    left: -130px;
+
+}
+
+form input {
+    width: 300px;
+    height: 30px;
+    border: 1px solid #EAB308;
+    background: #020617;
+    outline: none;
+    margin: 10px;
+    color: white;
+    padding: 5px;
+}
+
+.form span {
+    color: #FFF;
+    font-family: Lexend Deca;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 16px;
+    margin-bottom: 10px;
+    margin-left: 7px;
+}
+
+.form button {
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 280px;
+    height: 30px;
+    background-color: #EAB308;
+    margin-left: 6px;
+    margin-top: 1px;
+    outline: none;
+    border: 1px solid #EAB308;
+}
+
+form {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.form {
+    position: relative;
+    left: 30px;
+    width: 55%;
+    margin-left: 10%;
+}
+/* Add this to your index.css file */
+
+.container-footer{
+    display: flex;
+    margin-left: 40px;
+    background-color: #1F2937 ;
+    justify-content: space-around;
+    padding: 10px;
+    position:static;
+    margin-top: 0px;
+    
+
+}
+.container-footer .company img{
+    width: 120px;
+}
+.followus #social{
+    color:yellow;
+    font-size: 28px;
+    margin: 1px;
+
+}
+.followus #social:hover{
+    font-size: 20px;
+    background-color: #FFFFFF;
+}
+
+.userful-links p a{
+    text-decoration: none;
+    color: #9CA3AF;
+    margin: 2px;
+
+}
+.userful-links a:hover{
+   
+}
+.contact p{
+    color: #9CA3AF;
+    margin: 1px;
+    padding: 1px;
+}
+.company{
+    padding: 20px;
+    color: #9CA3AF;
+}
+.followus{
+    padding: 4%;
+ 
+}
+.container-footer h4{
+    color: #EAB308;
+    margin-top: 4px;
+    padding-top: 4px;
+}
+.fa-quote-left{
+
+    margin-right: 4px;
+}
+.info p:first-child{
+    color: #EAB308;
+    font-style: italic;
+    font-size: 20px;
+}
+
+/* Use a media query to change the styles for screens smaller than 800px */
+@media only screen and (max-width: 600px) {
+    body{
+
+        max-width: 100%;
+    }
+        .container-footer {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .userful-links,
+        .contact,
+        .company,
+        .followus {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+      
+    
+    .Container {
+        max-width: 100vw;
+        
+        
+    }
+
+    .menuicon {
+        display: block;
+        font-size: 18px;
+        color: #EAB308;
+        margin-left: 14vw;
+    }
+
+    .navigation-menu {
+        display: none;
+        flex-direction: column;
+
+    }
+
+    .navigation {
+        max-width: 100%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .navigation .logo{
+        margin-left: 10px;
+    }
+
+    .landpagecontainer {
+        flex-direction: column;
+        padding-left: 5vw;
+        width: 100%;
+    }
+
+    .landpagecontainer img {
+        position: relative;
+        top: -10vh;
+        text-align: center;
+        width: 100%;
+    }
+
+    .aboutmecontainer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Aboutmesection button {
+        margin-left: 0;
+    }
+
+    .imageSection {
+
+        width: 100%;
+        border: none;
+        position: relative;
+        right: 0;
+        margin: 0 auto;
+
+    }
+
+    #ty {
+        position: relative;
+        right: 0;
+
+    }
+
+    .imageSection img {
+        margin-left: 0;
+
+
+    }
+
+    .Aboutmesection p {
+        color: #6B7280;
+        font-family: Lexend Deca;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        width: 100%;
+        position: relative;
+        right: 0;
+        padding: 0px;
+        margin: 0px;
+
+    }
+
+    .Skillsitem_container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .Skillsitem {
+        width: 100%;
+        margin-left: -125px;
+    }
+
+    .skillscontainer h3 {
+        right: 0;
+        top: 0;
+        position: relative;
+    }
+
+    /* My portfolio */
+    .introduction p {
+
+        font-size: 24px;
+        max-width: 100%;
+        margin-left: -9vw;
+    }
+
+    .project {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project2 {
+        width: 90%;
+        margin-left: -39px;
+        margin-top: 10px;
+
+    }
+
+    /* blogs section */
+    #blogs p {
+        width: 100%;
+        margin-left: -100px;
+    }
+
+    .bloglist {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .Eachblog_container {
+        margin-left: -160px;
+        margin-top: 10px;
+
+
+    }
+
+    .contactHeader p {
+        max-width: 100%;
+        margin-left: 5vw;
+    }
+
+    .contactcontainer {
+        flex-direction: column;
+    }
+
+
+    .contactcontainer {
+        width: 100%;
+        margin-left: 0;
+        flex-direction: column;
+
+    }
+
+    .adress {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .contact {
+        width: 100%;
+        margin-top: 0;
+        padding: 20px;
+    }
+
+    .Register {
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .Form_Container {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+    .header{
+        display: none;
+    }
+
+    .conected {
+        width: 100%;
+        height: 20%;
+        margin: 0;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .form {
+        height: 80%;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        border: none;
+        position: static;
+    }
+}
+
+/* Tablet adjustments */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    /* .landpagecontainer {
+        padding-left: 10vw;
+        width: 100%;
+    }
+
+    .imageSection {
+
+        border-radius: 8px;
+        margin-right: 10vw;
+    }
+
+    .Aboutmesection button {
+        margin-left: 10vw;
+    }
+
+
+    .introduction p {
+        font-size: 20px;
+        margin-left: 10vw;
+    }
+
+    .project {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project1,
+    .project2 {
+        width: 45%;
+    }
+
+    /* Blogs section adjustments */
+    /* .blogscontainer p {
+        margin-left: 10vw;
+        max-width: 70%;
+    }
+
+    .Eachblog_container {
+        margin-left: 10vw;
+    } */
+
+    /* Contact section adjustments */
+    /* .contactHeader p {
+        max-width: 100%;
+        margin-left: 10vw;
+    }
+
+    .contactcontainer {
+        width: 70%;
+        margin-left: 10vw;
+    }
+
+    .adress {
+        width: 100%;
+        padding: 20px;
+    }  */
+
+
+    /* Login/Signup section adjustments */
+    .Register,
+    .Form_Container {
+        flex-direction: row;
+    }
+
+    .conected {
+        width: 60%;
+        height: 100%;
+        font-size: 32px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .form {
+        height: 80%;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        border: none;
+        position: static;
+    }
+}
