@@ -1,4 +1,5 @@
 window.addEventListener("load", function () {
+window.addEventListener("load", function () {
     const saveBlogButton = document.getElementById("saveblog");
     const blogTitle = document.getElementById("blog-title");
     const fileInput = document.getElementById("fileInput");
@@ -91,6 +92,7 @@ saveBlogButton.addEventListener("click", async function (event) {
     const file = document.getElementById("fileInput").files[0];
     const desc = document.getElementById("description").value;
     const content = document.getElementById("richtext").value;
+    
 
     const formData = new FormData();
     formData.append('title', title);
@@ -117,10 +119,24 @@ saveBlogButton.addEventListener("click", async function (event) {
             alert(`Something went wrong. Please try again: ${errorMessage}`);
         } else {
             alert("Blog created successfully!");
+           clearForm();
         }
     } catch (error) {
         console.log("Error:", error);
     }
 });
+});
+function clearForm() {
+    blogTitle.value = "";
+    fileInput.value = "";
+    description.value = "";
+    richText.value = "";
+
+    // Clear error messages and borders
+    titleError.textContent = "";
+    imageError.textContent = "";
+    descError.textContent = "";
+    textError.textContent = "";
+}
 });
 

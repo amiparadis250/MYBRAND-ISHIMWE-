@@ -1,4 +1,3 @@
-
 let authToken = localStorage.getItem("token")
     if (!authToken) {
         alert("Your Session is Over");
@@ -66,7 +65,7 @@ updateButton.addEventListener("click", async function (event) {
   const blogId = getQueryParam("blogId");
     try {
         const result = await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}`, {
-            method: "PUT",
+            method: "PATCH",
             headers: {
 
                 contentType: "multipart/form-data",
@@ -79,7 +78,7 @@ updateButton.addEventListener("click", async function (event) {
 
         if (!result.ok) {
             const errorMessage = await result.json(); 
-            alert(`Blog Updated successfully!`);
+            alert(`Failed to update blog!`);
         } else {
             alert("Blog Updated successfully!");
         }
