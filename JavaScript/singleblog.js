@@ -61,11 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let authToken = localStorage.getItem("token");
 
-
-        if (!authToken) {
-            alert("Login to Add your Comment");
-            window.location.href = "../html/register.html";
-        } else {
             sendButton.disabled = true;
             sendButton.style.backgroundColor = "green";
       
@@ -80,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         text: CommentText.value,
         commenterName:commenterName,
         commenterEmail:commenterEmail
-      }
+      };
             await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/comments`, {
                 method: "POST",
                 headers: {
@@ -106,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 sendButton.style.backgroundColor = ""; 
                 
             });
-        }
+        });
     });
-});
+
 document.addEventListener("DOMContentLoaded", (event) => {
     event.preventDefault();
     
