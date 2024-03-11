@@ -738,6 +738,7 @@ body {
     left: -9px;
     outline: 0px;
     border: 1px solid #1F2937;
+    color: white;
 }
 
 .contactcontainer .contact textarea {
@@ -745,6 +746,8 @@ body {
     height: 130px;
     background-color: #1F2937;
     outline: none;
+    color: white;
+    padding: 5px;
 }
 
 .contactcontainer .contact button {

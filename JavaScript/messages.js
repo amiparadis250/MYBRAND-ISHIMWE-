@@ -54,6 +54,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
          alert("Messages successfully Received");
             
             sendButton.disabled = false;
+            document.querySelector('form').reset();
+
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
