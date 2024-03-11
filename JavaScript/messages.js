@@ -35,7 +35,8 @@ document.querySelector('form').addEventListener('submit', function (event) {
     const guestName = name;
     const guestQuery = document.getElementById('message').value;
     const userEmail = email;
-
+    
+ try{
     fetch('https://mybrand-ishimwe-be-halx.onrender.com/api/queries', {
         method: 'POST',
         headers: {
@@ -55,11 +56,16 @@ document.querySelector('form').addEventListener('submit', function (event) {
             
             sendButton.disabled = false;
         })
-        .catch(error => {
+    }
+    catch{
             console.error('There was a problem with the fetch operation:', error);
             alert('Error: Unable to send query. Please try again later.'); 
             sendButton.disabled = false;
-        });
+        }
+        finally{
+
+
+        }
 
     event.preventDefault(); 
 });

@@ -103,6 +103,13 @@ function validateEmail(email) {
 }
 
 //fetching login APIs 
+
+function loaders() {
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
+    const registerWord = document.getElementById("registerWord");
+    registerWord.style.display = "none";
+}
 document.addEventListener("DOMContentLoaded", () => {
     const registerForm = document.getElementById("registrationForm");
     const registerButton = document.getElementById("registerButton");
@@ -116,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const password = document.getElementById("password").value;
 
         serverError.innerHTML = "";
+        loaders();
 
         try {
             const result = await fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/users/register", {
@@ -142,6 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error(error);
             serverError.innerHTML = "User Already Exisist";
         }
+        finally{
+            loaderContainer.style.display = "none";
+            registerWord.style.display="inline";
+        }
     });
 });
+
 
