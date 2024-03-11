@@ -1,4 +1,5 @@
 window.addEventListener("load", function () {
+window.addEventListener("load", function () {
     const saveBlogButton = document.getElementById("saveblog");
     const blogTitle = document.getElementById("blog-title");
     const fileInput = document.getElementById("fileInput");
@@ -137,4 +138,5 @@ function clearForm() {
     descError.textContent = "";
     textError.textContent = "";
 }
+});
 
