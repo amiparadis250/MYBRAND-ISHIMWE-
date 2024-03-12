@@ -942,6 +942,21 @@ form {
     font-style: italic;
     font-size: 20px;
 }
+#loader{
+    display:none;
+    position: relative;
+    bottom:28px;
+   
+   }
+  
+   #registerWord{
+    position: relative;
+    bottom: 5px;
+   }
+   #loginKeyword{
+    position: relative;
+    bottom: 5px;
+   }
 
 /* Use a media query to change the styles for screens smaller than 800px */
 @media only screen and (max-width: 600px) {
@@ -1251,4 +1266,6 @@ form {
         border: none;
         position: static;
     }
+    
+        
 }
