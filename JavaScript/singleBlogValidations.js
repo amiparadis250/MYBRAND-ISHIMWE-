@@ -94,29 +94,4 @@ function clearErrors() {
     clearError(commentError);
 }
 
-// Liking systems
-var like = document.getElementById('like');
-var unlike = document.getElementById('unlike');
-var number = document.getElementById('power');
-var unlikeNumber = document.getElementById('unlikeNumber');
-
-like.addEventListener('click', function () {
-    if (like.style.color !== 'blue' && unlike.style.color !== 'blue') {
-        like.style.color = 'blue';
-        unlike.style.color = '';
-        var numberOfLikes = parseInt(number.textContent);
-        number.textContent = numberOfLikes + 1;
-        unlikeNumber.textContent = numberOfDislikes - 1;
-    }
-});
-
-unlike.addEventListener('click', function () {
-    if (unlike.style.color !== 'blue' && like.style.color !== 'blue') {
-        like.style.color = '';
-        unlike.style.color = 'blue';
-        var numberOfDislikes = parseInt(unlikeNumber.textContent);
-        unlikeNumber.textContent = numberOfDislikes + 1;
-        number.textContent = numberOfLikes - 1;
-    }
-});
-
+//liking system
