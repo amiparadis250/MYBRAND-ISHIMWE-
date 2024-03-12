@@ -135,7 +135,7 @@ body {
 .comment-form textarea {
     width: 100%;
     margin-bottom: 10px;
-    padding: 10px;
+   
 }
 
 .comment-form button {
@@ -158,6 +158,12 @@ body {
     width: 40%;
     margin-bottom: 10px;
     padding: 10px;
+}
+#loader{
+    display: none;
+    position: relative;
+    right: 30px;
+    font-size: 20px;
 }
 
 /* Media Query for Small Screens */

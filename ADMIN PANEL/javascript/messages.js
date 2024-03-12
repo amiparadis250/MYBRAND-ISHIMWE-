@@ -23,7 +23,8 @@ fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/queries", {
             const email = data.data[i].email;
             const CommentID = data.data[i]._id;
             const row = document.createElement("tr");
-            row.innerHTML = `<td>${i+1}</td><td>${name}</td><td>${email}</td><td>${message}</td><td><i id="reply" style="color:#EAB308;font-size: 20px;" class="fa-solid fa-reply"></i></td><td  style="color:#EAB308"><i  id="deleteIcon${i}" class="fas fa-trash"></i></td>`;
+            row.innerHTML = `<td>${i+1}</td><td>${name}</td><td>${email}</td><td>${message}</td><td><i id="reply" style="color:#EAB308;font-size: 20px;" class="fa-solid fa-reply"></i></td><td  style="color:#EAB308"><i  id="deleteIcon${i}" class="fas fa-trash"></i>
+            <i id="loader${i}" style="font-size:20px;color:blue" class="fa fa-spinner fa-spin"></i></td>`;
             table.appendChild(row);
 
 
@@ -31,7 +32,10 @@ fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/queries", {
 const deleteIcon = document.getElementById(`deleteIcon${i}`)
 deleteIcon.addEventListener("click",(event)=>{
     event.preventDefault();
-    deleteIcon.style.color ="red";
+    const deleteIcon = document.getElementById(`deleteIcon${i}`);
+    deleteIcon.style.display = "none";
+    const loaderIcon = document.getElementById(`loader${i}`);
+    loaderIcon.style.display = "inline-block";
 fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/queries/${CommentID}`,{
     method:"DELETE",
     headers:{
@@ -44,7 +48,11 @@ fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/queries/${CommentID}`,{
         console.log("message not deleted: " + responce);
     }
     else{
-        alert("Message deleted")
+        loaderIcon.style.display = "none";
+        setTimeout(() =>{
+            alert("Message deleted")
+        },10)
+       
         location.reload();
     }
 })

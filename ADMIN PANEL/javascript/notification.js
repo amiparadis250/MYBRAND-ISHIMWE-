@@ -22,15 +22,26 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     let email = blogComments[j].commenterEmail;
                     let commentID = blogComments[j]._id;
                     let row = document.createElement("tr");
-                    row.innerHTML = `<td>${j + 1}</td><td>${commenterName}</td><td>${email}</td><td>${comment}</td><td>${blogTitle}</td><td style="color:red"><i id="delete${j}"  class="fas fa-trash"></i></td>`;
+                    row.innerHTML = `<td>${j + 1}</td><td>${commenterName}</td><td>${email}</td><td>${comment}</td><td>${blogTitle}</td><td style="color:red">
+                    <i id="delete${j}"  class="fas fa-trash"></i>
+                    <i id="loader${j}" style="display:none;font-size:24px;color:blue" class="fa fa-spinner fa-spin"></i>
+                    </td>`;
                     table.appendChild(row);
                 
 
                 //deleting comment
 
-                const deleteIcon  = document.getElementById(`delete${j}`);
-                deleteIcon.addEventListener("click", (event)=>{
+                const deleteIcon = document.getElementById(`delete${j}`);
+                deleteIcon.addEventListener("click", (event) => {
                     event.preventDefault();
+
+                    // Update variable names consistently
+                    const loaderIcon = document.getElementById(`loader${j}`);
+
+                    // Update the display style
+                    deleteIcon.style.display = "none";
+                    loaderIcon.style.display = "inline-block";
+
                     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/comments/${commentID}`, {
                         method: "DELETE",
                         headers: {
@@ -38,26 +49,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
                             "Authorization": `Bearer ${authToken}`
                         }
                     })
-                 .then(response => {
-                    if (!response.ok) {
-                        alert();
-                    }
-                    alert("Message not deleted")
-                    location.reload();
-                 })
-                })
+                    .then(response => {
+                        if (!response.ok) {
+                            setTimeout(() => {
+                                alert("Message not deleted");
+                            }, 20);
+                        }
+                        location.reload();
+                    })
+                    .catch(error => console.error(error));
+                });
             }
-            }
-                })
-                
-            }).
-        catch(error => console.error(error));
-
-   
-
+        }
+    })
+    .catch(error => console.error(error));
+});
 
 function getQueryParam(name) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
+const urlParams = new URLSearchParams(window.location.search);
+return urlParams.get(name);
 }
+
 

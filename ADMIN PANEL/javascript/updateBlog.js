@@ -63,6 +63,20 @@ updateButton.addEventListener("click", async function (event) {
         window.location.href = "../../index.html";
     }
   const blogId = getQueryParam("blogId");
+  const table = document.getElementById("table");
+  function Loaders(){
+      const loaderIcon = document.getElementById("loader");
+      loaderIcon.style.display = "block";
+      loaderIcon.style.position = "absolute";
+     loaderIcon.style.top = "50%";
+   loaderIcon.style.left = "50%";
+   loaderIcon.style.transform = "translate(-50%, -50%)";
+}
+function unLoad(){
+  const loaderIcon = document.getElementById("loader");
+  loaderIcon.style.display = "none";
+}
+Loaders();
     try {
         const result = await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}`, {
             method: "PATCH",
@@ -78,9 +92,14 @@ updateButton.addEventListener("click", async function (event) {
 
         if (!result.ok) {
             const errorMessage = await result.json(); 
+            unLoad();
             alert(`Failed to update blog!`);
         } else {
-            alert("Blog Updated successfully!");
+            unLoad();
+        
+            setTimeout(()=>{
+                alert("Blog Updated successfully!");
+            },10)
         }
     } catch (error) {
         console.log("Error:", error);

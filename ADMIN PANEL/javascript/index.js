@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-window.addEventListener("load", function () {
     const saveBlogButton = document.getElementById("saveblog");
     const blogTitle = document.getElementById("blog-title");
     const fileInput = document.getElementById("fileInput");
@@ -80,6 +79,7 @@ window.addEventListener("load", function () {
     richText.addEventListener("input", validateText);
 
 //APIS for creating blog
+
     
 saveBlogButton.addEventListener("click", async function (event) {
     saveBlogButton.style.color = "blue";
@@ -92,7 +92,6 @@ saveBlogButton.addEventListener("click", async function (event) {
     const file = document.getElementById("fileInput").files[0];
     const desc = document.getElementById("description").value;
     const content = document.getElementById("richtext").value;
-    
 
     const formData = new FormData();
     formData.append('title', title);
@@ -104,6 +103,19 @@ saveBlogButton.addEventListener("click", async function (event) {
     if (!authToken) {
         window.location.href = "../../index.html";
     }
+    function Loaders(){
+        const loaderIcon = document.getElementById("loader");
+        loaderIcon.style.display = "block";
+        loaderIcon.style.position = "absolute";
+       loaderIcon.style.top = "50%";
+     loaderIcon.style.left = "50%";
+     loaderIcon.style.transform = "translate(-50%, -50%)";
+}
+function unLoad(){
+    const loaderIcon = document.getElementById("loader");
+    loaderIcon.style.display = "none";
+}
+Loaders();
 
     try {
         const result = await fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/blogs", {
@@ -118,25 +130,15 @@ saveBlogButton.addEventListener("click", async function (event) {
             const errorMessage = await result.json(); 
             alert(`Something went wrong. Please try again: ${errorMessage}`);
         } else {
-            alert("Blog created successfully!");
-           clearForm();
+            unLoad();
+            setTimeout(() => {
+          alert("Blog created successfully!");    
+            }, 10);
+            clearform();
         }
     } catch (error) {
         console.log("Error:", error);
+        unLoad();
     }
 });
 });
-function clearForm() {
-    blogTitle.value = "";
-    fileInput.value = "";
-    description.value = "";
-    richText.value = "";
-
-    // Clear error messages and borders
-    titleError.textContent = "";
-    imageError.textContent = "";
-    descError.textContent = "";
-    textError.textContent = "";
-}
-});
-

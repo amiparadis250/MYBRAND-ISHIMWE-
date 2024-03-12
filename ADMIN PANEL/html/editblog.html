@@ -89,7 +89,6 @@
 
            
         </div>
-        <div class="editblog">
             <div class="editTitle"><h3>Manage Blogs</h3></div>
             <div class="table">
                 <table id="table">
@@ -104,19 +103,28 @@
                     
                     
                 </table>
+    
             </div>
             <div class="pagination">
                 <button onclick="prevPage()" style="width: 100px;">Previous</button>
                 <span id="currentPage" style="color: white;position: relative;top: 4px; ">Page 1</span>
                 <button onclick="nextPage()" style="width: 100px;">Next</button>
             </div>
+            <div class="editblog">
+                <div class="loaaders" id="loading">
+                    <i id="loader" style="display: none;color: blue;font-size: 120px;" class="fa fa-spinner fa-spin"></i>
+                </div>
         </div>
         
     </div>
 </div>
 </div>
+
     
 
+
+
+</dic>
 <script src="../javascript/editblog.js"></script>
 <script src="../javascript/logout.js"></script>
 </body>
