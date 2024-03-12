@@ -1,17 +1,14 @@
-
 function BlogsContainer() {
     const useState = React.useState;
     const useEffect = React.useEffect;
 
     const [blogs, setBlogs] = useState([]);
 
-
     useEffect(() => {
         fetchBlogs();
     }, []);
 
     function fetchBlogs() {
-        window.addEventListener("load", initSlider);
         fetch('https://mybrand-ishimwe-be-halx.onrender.com/api/blogs')
             .then(response => response.json())
             .then(data => {
@@ -20,6 +17,24 @@ function BlogsContainer() {
             })
             .catch(error => console.error('Error fetching data:', error));
     }
+
+    useEffect(() => {
+        const learnMoreClickHandler = (blogId) => {
+            window.location.href = `html/detailedView.html?blogId=${blogId}`;
+        };
+
+        blogs.forEach((blog, index) => {
+            const learnMoreElement = document.getElementById(`learnMore_${index}`);
+            learnMoreElement.addEventListener("click", () => learnMoreClickHandler(blog._id));
+        });
+
+        return () => {
+            blogs.forEach((blog, index) => {
+                const learnMoreElement = document.getElementById(`learnMore_${index}`);
+                learnMoreElement.removeEventListener("click", () => learnMoreClickHandler(blog._id));
+            });
+        };
+    }, [blogs]);
 
     return (
         <div className="blogs">
