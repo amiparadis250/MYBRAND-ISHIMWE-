@@ -16,6 +16,13 @@ function loaders() {
     const loginKeyWord = document.getElementById("loginKeyword");
     loginKeyWord.style.display = "none";
 }
+function RemoveLoader() {
+    const loader = document.getElementById("loader");
+    loader.style.display = "none";
+    const loginKeyWord = document.getElementById("loginKeyword");
+    loginKeyWord.style.display = "inline";
+
+}
 
 document.getElementById('registrationForm').addEventListener('submit', async function (event) {
     event.preventDefault();
@@ -60,10 +67,9 @@ document.getElementById('registrationForm').addEventListener('submit', async fun
             window.location.href = '../index.html';
         }
     } catch (error) {
-        serverError.innerHTML = 'Login Error: ' + error.message;
+        serverError.innerHTML = "Wrong Credentials";
     } finally {
        
-        loaderContainer.style.display = "none";
-        loginKeyWord.style.display = "inline";
-    }
+        RemoveLoader()
+}
 });
