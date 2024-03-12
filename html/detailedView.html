@@ -33,12 +33,12 @@
                 <div id="blogTextContent"></div>
                 <div class="feedback">
                     <p>Is this article helpful 
-                        <div class="rates" >
-                        <i class="fa-solid fa-thumbs-up" id="like"><sup id="likeNumbers" style="color:white;font-size: 17px;"></sup></i>
-                        <i id="unlike" class="fa-solid fa-thumbs-down" id="unlike"><sup id="unlikeNumber" style="color: white;font-size: 20px;">0</sup></i>
-                        <i id="comment" class="fa-solid fa-comment"><sup id="commentsNumber" style="color: white;font-size: 17px;">0</sup></i>
-                    </div>
-
+                        <div class="rates">
+                            <i class="fas fa-thumbs-up" id="like" onclick="handleReaction('like')"><sup id="likeNumbers" style="color: white; font-size: 17px;">0</sup></i>
+                            <!-- <i class="fas fa-thumbs-down" id="dislike" onclick="handleReaction('dislike')"><sup id="dislikeNumbers" style="color: white; font-size: 17px;">0</sup></i> -->
+                            <i class="fas fa-comment" id="comment"><sup id="commentsNumber" style="color: white; font-size: 17px;">0</sup></i>
+                            <span id="successMessage">Thank you for your reaction!</span>
+                        </div>
                     </p>
                 </div>
                 <div class="contact" id="contact">
@@ -50,30 +50,29 @@
                         <p><input id="email" type="text" placeholder="Email"><br></p>
                         <small id="commentError"></small>
                         <p><textarea id="ifuza" rows="10" cols="50" placeholder="Enter your message"></textarea><br></p>
-                        <button id="send" type="submit" style="background-color: yellow;">Send</button>
+                        <button id="send" type="submit" style="background-color: #EAB308;"><span id="commentsWord">Send</span><span id="loaderContainer"> <i id="loader" class="fa fa-spinner fa-spin" style=" color: white;"></i></span></button>
                     </form>
                     
                 </div>
             </div>
             <div class="commentContainer" id="commentContainer">
-                <!-- <div class="submittedComment">
-                    <div class="comment">
-                        <div class="commenter">
-                            <p id="commenterName">Mujyanama <span class="commentDate">22/07/2012</span></p>
-                        </div>
-                        <div class="commentText">
-                            <p id="commentText">We Love your Service</p>
-                        </div>
-                    </div>
-                </div> -->
-                
-            
-                
-    </div>
+ </div>
     <!-- <script src="../JavaScript/singleBlogValidations.js"></script> -->
      <script src="../JavaScript/singleBlog.js"></script>
      <script src="../JavaScript/singleBlogValidations.js"></script>
+     <script>
+     function handleReaction(reactionType) {
+            document.getElementById('like').style.display = 'none';
+            document.getElementById('dislike').style.display = 'none';
+            document.getElementById('comment').style.display = 'none';
+    
+            // Display success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'inline';
 
+        }
+    </script>
+    
      
     </div>
 </body>

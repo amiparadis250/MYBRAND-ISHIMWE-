@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     var blogId = getQueryParam('blogId');
     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}`, {
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let authToken = localStorage.getItem("token");
 
             sendButton.disabled = true;
-            sendButton.style.backgroundColor = "green";
+            
       
      
     //   console.log(authToken);
@@ -75,7 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
         text: CommentText.value,
         commenterName:commenterName,
         commenterEmail:commenterEmail
+      
       };
+      const loader = document.getElementById("loader");
+      loader.style.display = "block";
+      const commentsWord = document.getElementById("commentsWord");
+      commentsWord.style.display = "none";
             await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/comments`, {
                 method: "POST",
                 headers: {
@@ -86,12 +92,15 @@ document.addEventListener("DOMContentLoaded", () => {
             })
             .then(response => {
                 if (!response.ok) {
-                    alert();
+                    alert("Failed to add comment");
+                    loader.style.display = "none";
+                    commentsWord.style.display = "inline";
                 } else {
+                    loader.style.display = "none";
+                  commentsWord.style.display = "inline";
                     alert("Comment Added");
                     sendButton.disabled = false;
-                    sendButton.style.backgroundColor = ""; 
-                    location.reload(true); //reloading automatically
+                    location.reload(true); 
                 }
             })
             .catch(error => {
@@ -100,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 sendButton.disabled = false;
                 sendButton.style.backgroundColor = ""; 
                 
-            });
+            })
         });
     });
 
@@ -139,6 +148,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             hasLiked = true;
             likeButton.disabled = true;
+            
 
         } catch (error) {
             console.error(error);
@@ -175,6 +185,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
             hasUnLiked = true;
             unLikeButton.disabled = true;
+            
 
         } catch (error) {
             console.error(error);

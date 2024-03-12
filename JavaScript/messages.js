@@ -34,8 +34,6 @@ document.getElementById('myForm').addEventListener('submit', async function (eve
     const sendButton = document.getElementById('sendButton');
     
     sendButton.disabled = true;
-
-    // Display loader and hide contactKeyword
     
     const successMessage = document.getElementById('successMessage');
     
@@ -73,11 +71,8 @@ document.getElementById('myForm').addEventListener('submit', async function (eve
         console.error('There was a problem with the fetch operation:', error);
         alert(`Error: Unable to send query. ${error.message}`);
         sendButton.disabled = false;
-    } finally {
-        // Hide loader and show contactKeyword
-        loaderContainer.style.display = 'none';
-        contactKeyword.style.display = 'inline';
-    }
+    } 
+        
 
     event.preventDefault();
 });
