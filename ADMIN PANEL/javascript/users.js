@@ -29,8 +29,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     <td>${user.fullName}</td>
                     <td>${user.email}</td>
                     <td>${role}</td>
-                    <td><i id="deleteIcon${i}" class="fa-solid fa-trash"></i></td>
-                `
+                    <td><i id="deleteIcon${i}" class="fa-solid fa-trash"></i>
+                    <i id="loader${i}" style="display:none;font-size:20px;color:blue" class="fa fa-spinner fa-spin"></i></td>`
+                    
+                
                 table.appendChild(row);
 
                 // deleting user
@@ -39,6 +41,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 deleteIcon.addEventListener("click", (event) => {
                     event.preventDefault();
                     deleteIcon.style.color = "red";
+                    
                     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/users/profile/${userId}`, {
                         method: "DELETE",
                         headers: {

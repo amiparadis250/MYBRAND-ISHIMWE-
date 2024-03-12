@@ -24,7 +24,7 @@ fetch("https://mybrand-ishimwe-be-halx.onrender.com/api/queries", {
             const CommentID = data.data[i]._id;
             const row = document.createElement("tr");
             row.innerHTML = `<td>${i+1}</td><td>${name}</td><td>${email}</td><td>${message}</td><td><i id="reply" style="color:#EAB308;font-size: 20px;" class="fa-solid fa-reply"></i></td><td  style="color:#EAB308"><i  id="deleteIcon${i}" class="fas fa-trash"></i>
-            <i id="loader${i}" style="display:none;font-size:20px;color:blue" class="fa fa-spinner fa-spin"></i></td>`;
+            <i id="loader${i}" style="font-size:20px;color:blue" class="fa fa-spinner fa-spin"></i></td>`;
             table.appendChild(row);
 
 
