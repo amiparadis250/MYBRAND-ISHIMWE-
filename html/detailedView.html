@@ -34,11 +34,12 @@
                 <div class="feedback">
                     <p>Is this article helpful 
                         <div class="rates">
-                            <i class="fas fa-thumbs-up" id="like" onclick="handleReaction('like')"><sup id="likeNumbers" style="color: white; font-size: 17px;">0</sup></i>
-                            <!-- <i class="fas fa-thumbs-down" id="dislike" onclick="handleReaction('dislike')"><sup id="dislikeNumbers" style="color: white; font-size: 17px;">0</sup></i> -->
-                            <i class="fas fa-comment" id="comment"><sup id="commentsNumber" style="color: white; font-size: 17px;">0</sup></i>
-                            <span id="successMessage" style="display:none">Thank you for your reaction!</span>
-                        </div>
+
+                            <i class="fas fa-thumbs-up" id="like" ><sup id="likeNumbers" style="color: white; font-size: 13px;">0</sup></i>
+                            <i class="fas fa-thumbs-down" id="dislike"><sup id="dislikeNumbers" style="color: white; font-size: 13px;">0</sup></i>
+                            <!-- <i class="fas fa-comment" id="comment"><sup id="commentsNumber" style="color: white; font-size: 13px;">0</sup></i> -->
+                        
+             </div>
                     </p>
                 </div>
                 <div class="contact" id="contact">
@@ -60,19 +61,7 @@
     <!-- <script src="../JavaScript/singleBlogValidations.js"></script> -->
      <script src="../JavaScript/singleBlog.js"></script>
      <script src="../JavaScript/singleBlogValidations.js"></script>
-     <script>
-     function handleReaction(reactionType) {
-            document.getElementById('like').style.display = 'none';
-            document.getElementById('dislike').style.display = 'none';
-            document.getElementById('comment').style.display = 'none';
-    
-            // Display success message
-            const successMessage = document.getElementById('successMessage');
-            successMessage.style.display = 'inline';
-
-        }
-    </script>
-    
+     
      
     </div>
 </body>

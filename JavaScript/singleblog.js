@@ -34,22 +34,332 @@ document.addEventListener("DOMContentLoaded", () => {
         `
         document.getElementById("commentContainer").appendChild(submittedComment);
        }
-         //total blog comment
-        const numberComments = document.getElementById("commentsNumber");
-       numberComments.innerText = AllCommentscomments.length;
-         //total likes comments
+      
+
+       //liking functionality
          const numberlikes = document.getElementById("likeNumbers");
          numberlikes.innerText = blogData.likes;
-         //total unlikes comments
-         const numberUnlikes = document.getElementById("unlikeNumber");
-         numberUnlikes.innerText = blogData.dislikes;      
+         const numberUnlikes = document.getElementById("dislikeNumbers");
+         numberUnlikes.innerText = blogData.dislikes;  
+         const likeButton = document.getElementById("like");
+         const unlikeButton = document.getElementById("dislike");
+        //  likeButton.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     if (likeButton.style.color !== "blue") {
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //         .then(data => {
+        //             const updatedLikes = data.data.likes;
+        //             numberlikes.innerText = updatedLikes;
+        //             likeButton.style.color = "blue";
+        //         });
+        //     } else if(likeButton.style.color === "blue"){
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+        //             method: "DELETE",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //         .then(data => {
+        //             const updatedLikes = data.data.likes;
+        //             numberlikes.innerText = updatedLikes;
+        //             likeButton.style.color = "#EAB308";
+        //         });
+        //     }
+        //     else if(unlikeButton.style.color === "blue"){
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //             method: "DELETE",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //       .then(data => {
+        //         const updateddisLikes = data.data.dislikes;
+        //         numberUnlikes.innerText = updateddisLikes;
+        //         unlikeButton.style.color = "#EAB308";
+        //         likeButton.style.color ="blue";
+        //     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`,{
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         }
+        //     })
 
-    })
-    .catch(err => {
-        console.error(err);
-    });
-    
+        //       })
 
+        //     }
+        // });
+        // unlikeButton.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     if (unlikeButton.style.color!== "blue") {
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //       .then(data => {
+        //         const updateddisLikes = data.data.dislikes;
+        //         numberUnlikes.innerText = updateddisLikes;
+        //         unlikeButton.style.color = "blue";
+        //         likeButton.style.color ="#EAB308";
+        //       })
+        //     }
+        //     else if(unlikeButton.style.color === "blue"){
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //             method: "DELETE",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //     .then(data => {
+        //         const updateddisLikes = data.data.dislikes;
+        //         numberUnlikes.innerText = updateddisLikes;
+        //         unlikeButton.style.color = "#EAB308";
+                
+        //     })
+        // }
+        // else if(likeButton.style.color === "blue"){
+        //     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`,{
+        //         method: "DELETE",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         }
+        //     }).
+        //     then(response => response.json())
+        //     .then(data =>{
+        //         const updatedLikes = data.data.likes;
+        //         numberlikes.innerText = (updatedLikes-1);
+        //         likeButton.style.color = "#EAB308";
+        //     })
+        //     fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`,{
+        //         method: "POST",
+        //         headers: {
+        //             "Content-Type": "application/json",
+        //         }
+
+        //     })
+        //     .then(responce=>responce.json())
+        //     .then(data=>{
+        //         const updateddisLikes = data.data.dislikes;
+        //         numberUnlikes.innerText = updateddisLikes;
+        //         unlikeButton.style.color = "blue";
+        //         likeButton.style.color ="#EAB308";
+                
+
+        //     })
+
+        //     }
+
+        // }
+        // )
+        // likeButton.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     if (likeButton.style.color !== "blue") {
+        //         // Like the post
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //           .then(data => {
+        //             const updatedLikes = data.data.likes;
+        //             numberlikes.innerText = updatedLikes;
+        //             likeButton.style.color = "blue";
+        //             unlikeButton.style.color = "#EAB308"; // Remove dislike color
+        //             if (unlikeButton.style.color === "blue") {
+        //                 // If dislike was already selected, remove it
+        //                 fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //                     method: "DELETE",
+        //                     headers: {
+        //                         "Content-Type": "application/json",
+        //                     }
+        //                 }).then(response => response.json())
+        //                   .then(data => {
+        //                     const updatedDislikes = data.data.dislikes;
+        //                     numberUnlikes.innerText = updatedDislikes;
+        //                     unlikeButton.style.color = "#EAB308";
+        //                 });
+        //             }
+        //         });
+        //     } else {
+        //         // Unlike the post
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+        //             method: "DELETE",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //           .then(data => {
+        //             const updatedLikes = data.data.likes;
+        //             numberlikes.innerText = updatedLikes;
+        //             likeButton.style.color = "#EAB308";
+        //         });
+        //     }
+        // });
+        
+        // unlikeButton.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     if (unlikeButton.style.color !== "blue") {
+        //         // Dislike the post
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //             method: "POST",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //           .then(data => {
+        //             const updateddisLikes = data.data.dislikes;
+        //             numberUnlikes.innerText = updateddisLikes;
+        //             unlikeButton.style.color = "blue";
+        //             likeButton.style.color = "#EAB308"; // Remove like color
+        //             if (likeButton.style.color === "blue") {
+        //                 // If like was already selected, remove it
+        //                 fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+        //                     method: "DELETE",
+        //                     headers: {
+        //                         "Content-Type": "application/json",
+        //                     }
+        //                 }).then(response => response.json())
+        //                   .then(data => {
+        //                     const updatedLikes = data.data.likes;
+        //                     numberlikes.innerText = updatedLikes;
+        //                     likeButton.style.color = "#EAB308";
+        //                 });
+        //             }
+        //         });
+        //     } else {
+        //         // Remove dislike
+        //         fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+        //             method: "DELETE",
+        //             headers: {
+        //                 "Content-Type": "application/json",
+        //             }
+        //         }).then(response => response.json())
+        //           .then(data => {
+        //             const updateddisLikes = data.data.dislikes;
+        //             numberUnlikes.innerText = updateddisLikes;
+        //             unlikeButton.style.color = "#EAB308";
+        //         });
+        //     }
+        // });
+        likeButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (unlikeButton.style.color === "blue") {
+                // Remove dislike first
+                removeDislike();
+                likePost();
+            } else {
+                // Directly like the post
+                likePost();
+            }
+        });
+        
+        function likePost() {
+            if (likeButton.style.color !== "blue") {
+                // Like the post
+                fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                }).then(response => response.json())
+                  .then(data => {
+                    const updatedLikes = data.data.likes;
+                    numberlikes.innerText = updatedLikes;
+                    likeButton.style.color = "blue";
+                    unlikeButton.style.color = "#EAB308"; // Remove dislike color
+                })
+                .catch(error => console.error('Error:', error));
+            } else {
+                // Unlike the post
+                unlikePost();
+            }
+        }
+        
+        function unlikePost() {
+            fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }).then(response => response.json())
+              .then(data => {
+                const updatedLikes = data.data.likes;
+                numberlikes.innerText = updatedLikes;
+                likeButton.style.color = "#EAB308";
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        unlikeButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            if (likeButton.style.color === "blue") {
+                // Remove like first
+                removeLike();
+            } else {
+                // Directly dislike the post
+                dislikePost();
+            }
+        });
+        
+        function removeLike() {
+            fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }).then(response => response.json())
+              .then(data => {
+                const updatedLikes = data.data.likes;
+                numberlikes.innerText = updatedLikes;
+                likeButton.style.color = "#EAB308";
+                dislikePost();
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        
+        function dislikePost() {
+            if (unlikeButton.style.color !== "blue") {
+                // Dislike the post
+                fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                }).then(response => response.json())
+                  .then(data => {
+                    const updateddisLikes = data.data.dislikes;
+                    numberUnlikes.innerText = updateddisLikes;
+                    unlikeButton.style.color = "blue";
+                    likeButton.style.color = "#EAB308"; // Remove like color
+                })
+                .catch(error => console.error('Error:', error));
+            } else {
+                // Remove dislike
+                removeDislike();
+            }
+        }
+        
+        function removeDislike() {
+            fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            }).then(response => response.json())
+              .then(data => {
+                const updateddisLikes = data.data.dislikes;
+                numberUnlikes.innerText = updateddisLikes;
+                unlikeButton.style.color = "#EAB308";
+            })
+            .catch(error => console.error('Error:', error));
+        }
     //Comments creation
     const sendButton = document.getElementById("send"); 
 
@@ -112,91 +422,12 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         });
     });
-
-document.addEventListener("DOMContentLoaded", (event) => {
-    event.preventDefault();
-    
-    const blogId = getQueryParam('blogId');
-    
-    // Like functionality
-    const likeButton = document.getElementById("like");
-    const likeNumbers = document.getElementById("likeNumbers");
-
-    let hasLiked = false;
-
-    likeButton.addEventListener("click", async () => {
-        try {
-            if (hasLiked) {
-                console.error("User has already liked the blog.");
-                return;
-            }
-
-            const response = await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/likes`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error(`Failed to like the blog: ${response.status}`);
-            }
-
-            const result = await response.json();
-            const updatedLikeCount = result.data.likes;
-            likeNumbers.textContent = updatedLikeCount;
-
-            hasLiked = true;
-            likeButton.disabled = true;
-            
-
-        } catch (error) {
-            console.error(error);
-        }
-    });
-
-    // Dislike functionality
-    const unLikeButton = document.getElementById("dislike");
-    const unLikeNumbers = document.getElementById("dislikeNumbers");
-
-    let hasUnLiked = false;
-
-    unLikeButton.addEventListener("click", async () => {
-        try {
-            if (hasUnLiked) {
-                console.error("User has already disliked the blog.");
-                return;
-            }
-
-            const response = await fetch(`https://mybrand-ishimwe-be-halx.onrender.com/api/blogs/${blogId}/dislikes`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error(`Failed to dislike the blog: ${response.status}`);
-            }
-
-            const result = await response.json();
-            const updatedDisLikeCount = result.data.dislikes;
-            unLikeNumbers.textContent = updatedDisLikeCount;
-
-            hasUnLiked = true;
-            unLikeButton.disabled = true;
-            
-
-        } catch (error) {
-            console.error(error);
-        }
-    });
 });
-
-
-
-
 function getQueryParam(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
+
+
+
+
