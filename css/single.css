@@ -83,12 +83,18 @@ body {
     margin-top: 70px;
     margin-left: 20px;
 }
+#blogTitle{
+    color: #FFF;
+}
+#author{
+    color: #FFF;   
+}
 
 .news {
     padding: 60px 30px;
 }
 
-.newsbody img {
+ img {
     margin-top: 15px;
     padding-left: 27px;
     width: 80%;
@@ -104,7 +110,7 @@ body {
     font-size: 24px;
 }
 
-.newsbody p {
+.blog p {
     font-size: 18px;
     margin: 20px 0;
     padding-right: 15px;
