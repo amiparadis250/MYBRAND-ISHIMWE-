@@ -13,115 +13,12 @@
     <title> About me</title>
     <meta name="description" content="This is ISHIMWE Ami Portfolio">
     <link rel="stylesheet" href="css/ishimwe.css">
+    <!-- /cdn -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <style>
-        .error-message {
-            color: red;
-            margin-top: 5px;
-        }
-        .superdiv{
-            max-width: 998px;
-            width:100%;
-            margin: 0 auto;
-        
-           
-
-        }
-    
-.blog-img {
-  width: 100%; 
-  height: 240px;
-  object-fit: cover;
-  
-}
-        @media (max-width: 768px) {
-    .bloglist {
-        flex-direction: column; 
-        align-items: center;
-        justify-content: flex-start;
-        overflow-x: hidden;
-        padding: 0; 
-    }
-
-    .Eachblog_container {
-        width: 90%; 
-        margin-bottom: 20px; 
-        box-shadow: 0px 4px 6px rgba(0,0,0,0.1); 
-    }
-   
-
-    .helper {
-        position: static; 
-        display: block;
-        margin-top: 10px;
-        font-size: larger; 
-    }
-}
-
-
-        .superdiv2{
-            position: relative;
-            padding-right: 0px;
-            align-items: flex-start;
-        }
-        .bloglist{
-            display: flex;
-            flex-direction: row;
-            gap:30px;
-            font-size:0;
-            overflow: auto;
-            margin-bottom:20px;
-            scrollbar-width: none;
-           align-items: center;
-            justify-content: flex-start;
-           }
-         .bloglist::-webkit-scrollbar{
-            display:none;
-        }
-       .Eachblog_container{
-        
-flex: 1 1 300px; 
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-        }
-        .blog-image img{
-            width:300px;
-            object-fit: cover;
-            
-        }
-        .blogscontainer{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        .helper{
-            position: absolute;
-            top:50%;
-            width:60px;
-            padding:5px;
-            border-radius:5px;
-            background-color: aliceblue;
-        }
-         #right{
-            right:-30px;
-            background-color: yellow;
-            outline: none;
-            border: none;
-        }
-        #left{
-          left: -30px;  
-          display: block;
-          background-color: yellow;
-          outline: none;
-          border: none;
-        }
-        #t{
-            color: yellow !important;
-            position: relative;
-            top: 20px !important;
-        } 
+       
     </style>
 </head>
 
@@ -351,75 +248,11 @@ flex: 1 1 300px;
             </div>
 
             <!-- Starting my blog -->
-            <div class="blogs">
-                <div class="blogscontainer" id="blogs">
-                    <div class="blogtitle">Blog</div>
-                    <p>
-                        Tech Tales: A Full-Stack Developer's Insights. Explore my journey,
-                        coding wisdom, and innovative solutions in a concise and engaging format.
-                        Stay on track of release of new latest technologies
-                    </p>
-                    
-                    
-                     <div class="superdiv">
-                        <div class="superdiv2">
-
-                    <button id="left" class="helper">left</button>
-                             
-                    <div class="bloglist" id="blogSlider">
-                        <!-- <div class="Eachblog_container">
-                            <div class="blog-image"><img src="images/blogs/Image.png" alt="" width="300px" class="img"></div>
-                            <div class="bloginfo">
-                                <div class="title">Write once run every Where1</div>
-                                <span>Lorem ipsum dolor sit amet,
-                                    consectetur &nbsp;adipiscing elit.
-                                    Vitae nulla diam in ac &nbsp;dictum a urna </span><br>
-                                <span id="t">Learn More </span>
-                                <div class="blogicons">
-                                    <span><i class="fa-solid fa-thumbs-up"></i></span>
-                                <span><i class="fa-solid fa-comment"></i><sup  style="color:black; font-weight: bolder;">5</sup></span>
-                                <span><i class="fa-solid fa-eye"></i><sup style="color:black; font-weight: bolder;">2</sup></span>
-                                </div>
-                            </div>
-                        </div> -->
-    
-                    </div>
-                    <button id="right" class="helper">right</button> 
-                </div> 
-                        
-                    </div>
-                </div>
-            </div>
+            <div id="blog-container"></div>
 
             <!-- Ending of Blog part -->
             <!-- Starting of contact of me page -->
-            <div class="contactpage">
-                <div class="contactHeader">
-                    <div class="title1">Contact <span>Me</span> </div>
-                    <p>Kindly take your Handset, call me or drop me an email , I will be happy to reach out to you</p>
-
-                </div>
-                <div class="contactcontainer">
-                    <div class="adress">
-                        <p><span>Address _</span> Nyarugenge,Kigali,Rwanda</p>
-                        <p><span>Phone _ </span>+250791966291</p>
-                        <p><span>E mail _</span> pishimweaime7@gmail.com.com</p>
-                        <p><span>Website _</span> www.abc.aboutme.com</p>
-                    </div>
-                    <div class="contact" id="contact">
-    <form id="myForm">
-        <input id="name" type="text" placeholder="Name"><br>
-        <span id="nameError" class="error-message"></span>
-        <input id="email" type="text" placeholder="email"><br>
-        <span id="emailError" class="email"></span>
-        <textarea id="message" rows="5" cols="40" placeholder="Enter your message"></textarea><br>
-        <button type="submit" id="sendButton"><span id="contactKeyword">Contact Us</span></button></button>
-        <span id="successMessage" style="display:none;color: green;">Message sent successfully!</span>
-    </form>
-
-                    </div>
-                </div>
-            </div>
+            <div id="root_contact"></div>
          
            
 <!-- Starting of Footer-->
@@ -471,7 +304,8 @@ flex: 1 1 300px;
 </div>
 <script src="JavaScript/messages.js"></script>
 <script src="/JavaScript/script.js"></script>
-
+<script src="JavaScript/contact.jsx" type="text/babel"></script>
+<script type="text/babel" src="JavaScript/components/index.jsx"></script>
 <script src="JavaScript/index.js"></script>
     
 
